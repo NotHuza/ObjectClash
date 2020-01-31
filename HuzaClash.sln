@@ -10,8 +10,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRepublic.LZMAManager", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRepublic.Restarter", "src\CRepublic.Restarter\CRepublic.Restarter.csproj", "{B75A39CD-0FB4-4659-B458-BFCD8C08469D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRepublic.RoyaleEditor", "src\CRepublic.RoyaleEditor\CRepublic.RoyaleEditor.csproj", "{B508A4AB-A5CA-4680-9C10-DFA10CECE7BC}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CR.Servers", "CR.Servers", "{CB034C1A-79A1-4268-AB2A-780B46621A3E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CR.Servers", "src\CR.Servers\CR.Servers\CR.Servers.csproj", "{847BD846-3D33-486F-80E9-E7B3C3E97024}"
@@ -58,14 +56,6 @@ Global
 		{B75A39CD-0FB4-4659-B458-BFCD8C08469D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B75A39CD-0FB4-4659-B458-BFCD8C08469D}.Release|x64.ActiveCfg = Release|Any CPU
 		{B75A39CD-0FB4-4659-B458-BFCD8C08469D}.Release|x64.Build.0 = Release|Any CPU
-		{B508A4AB-A5CA-4680-9C10-DFA10CECE7BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B508A4AB-A5CA-4680-9C10-DFA10CECE7BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B508A4AB-A5CA-4680-9C10-DFA10CECE7BC}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{B508A4AB-A5CA-4680-9C10-DFA10CECE7BC}.Debug|x64.Build.0 = Debug|Any CPU
-		{B508A4AB-A5CA-4680-9C10-DFA10CECE7BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B508A4AB-A5CA-4680-9C10-DFA10CECE7BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B508A4AB-A5CA-4680-9C10-DFA10CECE7BC}.Release|x64.ActiveCfg = Release|Any CPU
-		{B508A4AB-A5CA-4680-9C10-DFA10CECE7BC}.Release|x64.Build.0 = Release|Any CPU
 		{847BD846-3D33-486F-80E9-E7B3C3E97024}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{847BD846-3D33-486F-80E9-E7B3C3E97024}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{847BD846-3D33-486F-80E9-E7B3C3E97024}.Debug|x64.ActiveCfg = Debug|Any CPU
