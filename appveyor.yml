@@ -2,4 +2,9 @@ version: 1.0.{build}
 before_build:
 - cmd: nuget restore
 build:
-  verbosity: minimal
+  publish_wap: true
+  publish_nuget: true
+  publish_nuget_symbols: true
+  include_nuget_references: true
+  parallel: true
+  verbosity: normal
