@@ -1,7 +1,0 @@
-C:\Users\e3xme\Desktop\Huza-Clash-master\src\CRepublic.LibraryPatcher\Builds\Debug\Clashers' Republic Library Patcher.exe.config
-C:\Users\e3xme\Desktop\Huza-Clash-master\src\CRepublic.LibraryPatcher\Builds\Debug\Clashers' Republic Library Patcher.exe
-C:\Users\e3xme\Desktop\Huza-Clash-master\src\CRepublic.LibraryPatcher\Builds\Debug\Clashers' Republic Library Patcher.pdb
-C:\Users\e3xme\Desktop\Huza-Clash-master\src\CRepublic.LibraryPatcher\obj\Debug\CRepublic.LibraryPatcher.csprojAssemblyReference.cache
-C:\Users\e3xme\Desktop\Huza-Clash-master\src\CRepublic.LibraryPatcher\obj\Debug\CRepublic.LibraryPatcher.csproj.CoreCompileInputs.cache
-C:\Users\e3xme\Desktop\Huza-Clash-master\src\CRepublic.LibraryPatcher\obj\Debug\Clashers' Republic Library Patcher.exe
-C:\Users\e3xme\Desktop\Huza-Clash-master\src\CRepublic.LibraryPatcher\obj\Debug\Clashers' Republic Library Patcher.pdb
