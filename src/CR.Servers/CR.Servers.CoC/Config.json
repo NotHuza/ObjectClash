@@ -1,0 +1,23 @@
+﻿{
+  "Game": {
+    "UpdateURL": "http://192.168.0.105/",
+    "PatchURL": "http://192.168.0.105/patch/",
+    "EventURL": "http://192.168.0.105/events/",
+    "GameAssetsURL": "http://192.168.0.105/patch/",
+    "GameDbURI": "mongodb://localhost:27017",
+    "ClientMajorVersion": "9",
+    "ClientMinorVersion": "256",
+    "StartingResources": {
+      "FetchFromCSV": false,
+      "Diamonds": 10000,
+      "Gold": 2000000000,
+      "Elixir": 2000000000,
+      "DarkElixir": 2000000000,
+      "GoldV2": 2000000000,
+      "ElixirV2": 2000000000
+    }
+  },
+  "Server": {
+    "RestartIntervalInMinute" : 1
+  } 
+}
