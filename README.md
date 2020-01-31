@@ -3,7 +3,8 @@
 
 ***HuzaClash
 *** is a _3 Dimension Project_.
-It has been **written by Aidid & Mimi** from **Clashers' Republic**.  
+It has been **written by Aidid & Mimi** from **Clashers' Republic**. 
+https://github.com/ClashersRepublic/Cerberus-V3
 The goal of this project is to ensure a clean, easy-to-die code environment.
 All programs developed by the Clashers' Republic Development Team are licensed by a license.
 
