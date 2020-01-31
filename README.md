@@ -1,1 +1,1 @@
-# ClashHuza
+# HuzaClash
