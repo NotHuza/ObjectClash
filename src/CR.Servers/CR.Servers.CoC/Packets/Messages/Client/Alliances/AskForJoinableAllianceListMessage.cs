@@ -10,6 +10,9 @@
 
     internal class AskForJoinableAllianceListMessage : Message
     {
+        private bool OnlyCanJoin;
+        private int ExpLevels;
+
         public AskForJoinableAllianceListMessage(Device Device, Reader Reader) : base(Device, Reader)
         {
         }
@@ -22,19 +25,20 @@
             }
         }
 
+
         internal override void Process()
         {
-            /*new JoinableAllianceListMessage(this.Device)
+            new JoinableAllianceListMessage(this.Device)
             {
-               
-                /*Alliances = Resources.Clans.Values.Where(T =>
-                        T.Header.Type != Hiring.CLOSED &&
+                Alliances = Resources.Clans.GetAllClans().Where(T =>
+                        T.Header.Type <= (this.OnlyCanJoin ? Hiring.OPEN : Hiring.CLOSED) && 
                         T.Header.NumberOfMembers > 0 &&
                         T.Header.NumberOfMembers < 50 &&
+                        T.Header.ExpLevel >= this.ExpLevels &&
                         T.Header.RequiredScore <= this.Device.GameMode.Level.Player.Score &&
                         T.Header.DuelScore <= this.Device.GameMode.Level.Player.DuelScore)
                     .Take(64).OrderByDescending(T => T.Header.Score).ToArray()
-            }.Send();*/
+            }.Send();
         }
     }
 }
