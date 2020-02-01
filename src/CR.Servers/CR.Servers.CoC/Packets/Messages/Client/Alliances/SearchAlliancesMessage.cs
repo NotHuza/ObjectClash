@@ -60,7 +60,7 @@
                         T.Header.NumberOfMembers >= this.MinimumMembers &&
                         T.Header.NumberOfMembers <= this.MaximumMembers &&
                         T.Header.ExpLevel >= this.ExpLevels &&
-                        T.Header.Type <= (this.OnlyCanJoin ? Hiring.INVITE : Hiring.CLOSED) && //TODO: Check required trophy stuff
+                        T.Header.Type <= (this.OnlyCanJoin ? Hiring.OPEN : Hiring.INVITE) && //TODO: Check required trophy stuff
                         T.Header.Origin == (this.ClanLocation == 0 ? T.Header.Origin : this.ClanLocation) &&
                         T.Header.WarFrequency == (this.WarFrequency == 0 ? T.Header.WarFrequency : this.WarFrequency) &&
                         T.Header.Score >= this.RequiredScore &&
