@@ -40,10 +40,7 @@
                         T.Header.DuelScore <= this.Device.GameMode.Level.Player.DuelScore)
                     .Take(64).OrderByDescending(T => T.Header.Score).ToArray()
             }.Send();
-         else
-            {
-        Console.WriteLine("some stuck Here!");
-         }
+     
         }
     }
 }
