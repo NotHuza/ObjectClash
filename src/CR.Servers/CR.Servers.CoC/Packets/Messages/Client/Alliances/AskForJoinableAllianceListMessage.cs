@@ -26,21 +26,20 @@
         }
 
 
-        internal override void Process()
+       
+internal override void Process()
         {
+           
             new JoinableAllianceListMessage(this.Device)
             {
                 Alliances = Resources.Clans.GetAllClans().Where(T =>
-                        T.Header.Type <= (this.OnlyCanJoin ? Hiring.OPEN : Hiring.CLOSED) && 
+                        T.Header.Type == Hiring.OPEN &&
                         T.Header.NumberOfMembers > 0 &&
                         T.Header.NumberOfMembers < 50 &&
-                        T.Header.ExpLevel > 0 &&
-                        T.Header.ExpLevel < 999 &&// im testing beter stuf
-                        T.Header.RequiredScore <= this.Device.GameMode.Level.Player.Score &&
-                        T.Header.DuelScore <= this.Device.GameMode.Level.Player.DuelScore)
-                    .Take(64).OrderByDescending(T => T.Header.Score).ToArray()
+                        T.Header.RequiredScore <= this.Device.GameMode.Level.Player.Score)
+                     .Take(64).OrderByDescending(T => T.Header.Score).ToArray()
             }.Send();
-     
         }
+
     }
-}
+} 
