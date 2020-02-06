@@ -11,8 +11,8 @@ namespace CR.Servers.CoC
 {
     internal class Program
     {
-        private const int Width = 140;
-        private const int Height = 30;
+        private static int Width = 140;
+        private static int Height = 30;
 
         public static IConfigurationRoot Configuration { get; set; }
 
