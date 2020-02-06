@@ -81,15 +81,30 @@
         internal static int AttackPrepartionLength;
         internal static int AttackPrepartionLength2;
 
+        public GlobalData GetGlobalData(string str)
+        {
+            return DataTables.Csv14Name(str);
+        }
+
+        public int GlobalNumberValue(string str)
+        {
+            return this.GetGlobalData(str).NumberValue;
+        }
+
+        public bool GlobalBooleanValue(string str)
+        {
+            return this.GetGlobalData(str).BooleanValue;
+        }
+
         internal static void Initialize()
         {
             Globals.AllianceCreateResourceData = (ResourceData) CSV.Tables.Get(Gamefile.Resources).GetData(((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("ALLIANCE_CREATE_RESOURCE")).TextValue);
-            Globals.AllianceCreateCost = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("ALLIANCE_CREATE_COST")).NumberValue;
-            Globals.StartingDiamonds = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("STARTING_DIAMONDS")).NumberValue;
-            Globals.StartingGold = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("STARTING_GOLD")).NumberValue;
-            Globals.StartingElixir = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("STARTING_ELIXIR")).NumberValue;
-            Globals.StartingGold2 = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("STARTING_GOLD2")).NumberValue;
-            Globals.StartingElixir2 = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("STARTING_ELIXIR2")).NumberValue;
+            Globals.AllianceCreateCost = this.GlobalNumberValue("ALLIANCE_CREATE_COST");
+            Globals.StartingDiamonds = this.GlobalNumberValue("STARTING_DIAMONDS");
+            Globals.StartingGold = this.GlobalNumberValue("STARTING_GOLD");
+            Globals.StartingElixir = this.GlobalNumberValue("STARTING_ELIXIR");
+            Globals.StartingGold2 = this.GlobalNumberValue("STARTING_GOLD2");
+            Globals.StartingElixir2 = this.GlobalNumberValue("STARTING_ELIXIR2");
 
             Globals.SpeedUpDiamondCost1Min = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("SPEED_UP_DIAMOND_COST_1_MIN")).NumberValue;
             Globals.SpeedUpDiamondCost1Hour = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("SPEED_UP_DIAMOND_COST_1_HOUR")).NumberValue;
