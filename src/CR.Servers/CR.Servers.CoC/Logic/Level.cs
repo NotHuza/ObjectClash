@@ -63,7 +63,7 @@
 
             this.Player = new Player(null, 0, 0)
             {
-                Name = "Clashers Republic - AI Base",
+                Name = "ClashLand - AI Base",
                 NameSetByUser = true,
                 Score = 9999,
                 League = 22,
