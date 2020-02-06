@@ -428,7 +428,8 @@
                 {"avatar_id_low", this.LowID},
                 {"name", this.Name},
                 {"alliance_name", this.InAlliance ? this.Alliance.Header.Name : string.Empty},
-                {"xp_level", this.ExpLevel}
+                {"xp_level", this.ExpLevel},
+                {"xp_points", this.ExpPoints}
             };
 
             if (this.InAlliance)
