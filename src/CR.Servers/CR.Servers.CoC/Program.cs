@@ -22,7 +22,7 @@ namespace CR.Servers.CoC
         private static void Main()
         {
             Configuration = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("Config.json").Build();
-            Console.Title =  $"Clashers Republic - {Assembly.GetExecutingAssembly().GetName().Name} - {DateTime.Now.Year} ©";
+            Console.Title =  $"Huza Clash - {Assembly.GetExecutingAssembly().GetName().Name} - {DateTime.Now.Year} ©";
 
             Console.SetOut(new Prefixed());
             Console.SetWindowSize(Width, Height);
