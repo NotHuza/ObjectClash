@@ -15,7 +15,7 @@
                 while (true)
                 {
                     int CursorTop2 = Console.CursorTop = Console.WindowTop + Console.WindowHeight - 1;
-                    Console.Write("debug@HuzaClash.localnetwork, /help > ");
+                    Console.Write("debug@ClashLand.localnetwork, /help > ");
 
                     string Command = Console.ReadLine();
 
