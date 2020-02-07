@@ -106,15 +106,15 @@
             Globals.StartingGold2 = this.GlobalNumberValue("STARTING_GOLD2");
             Globals.StartingElixir2 = this.GlobalNumberValue("STARTING_ELIXIR2");
 
-            Globals.SpeedUpDiamondCost1Min = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("SPEED_UP_DIAMOND_COST_1_MIN")).NumberValue;
-            Globals.SpeedUpDiamondCost1Hour = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("SPEED_UP_DIAMOND_COST_1_HOUR")).NumberValue;
-            Globals.SpeedUpDiamondCost24Hours = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("SPEED_UP_DIAMOND_COST_24_HOURS")).NumberValue;
-            Globals.SpeedUpDiamondCost1Week = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("SPEED_UP_DIAMOND_COST_1_WEEK")).NumberValue;
+            Globals.SpeedUpDiamondCost1Min = this.GlobalNumberValue("SPEED_UP_DIAMOND_COST_1_MIN");
+            Globals.SpeedUpDiamondCost1Hour = this.GlobalNumberValue("SPEED_UP_DIAMOND_COST_1_HOUR");
+            Globals.SpeedUpDiamondCost24Hours = this.GlobalNumberValue("SPEED_UP_DIAMOND_COST_24_HOURS");
+            Globals.SpeedUpDiamondCost1Week = this.GlobalNumberValue("SPEED_UP_DIAMOND_COST_1_WEEK");
 
-            Globals.Village2SpeedUpDiamondCost1Min = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("VILLAGE2_SPEED_UP_DIAMOND_COST_1_MIN")).NumberValue;
-            Globals.Village2SpeedUpDiamondCost1Hour = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("VILLAGE2_SPEED_UP_DIAMOND_COST_1_HOUR")).NumberValue;
-            Globals.Village2SpeedUpDiamondCost24Hours = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("VILLAGE2_SPEED_UP_DIAMOND_COST_24_HOURS")).NumberValue;
-            Globals.Village2SpeedUpDiamondCost1Week = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("VILLAGE2_SPEED_UP_DIAMOND_COST_1_WEEK")).NumberValue;
+            Globals.Village2SpeedUpDiamondCost1Min = this.GlobalNumberValue("VILLAGE2_SPEED_UP_DIAMOND_COST_1_MIN");
+            Globals.Village2SpeedUpDiamondCost1Hour = this.GlobalNumberValue("VILLAGE2_SPEED_UP_DIAMOND_COST_1_HOUR");
+            Globals.Village2SpeedUpDiamondCost24Hours = this.GlobalNumberValue("VILLAGE2_SPEED_UP_DIAMOND_COST_24_HOURS");
+            Globals.Village2SpeedUpDiamondCost1Week = this.GlobalNumberValue("VILLAGE2_SPEED_UP_DIAMOND_COST_1_WEEK");
 
             Globals.ResourceDiamondCost100 = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("RESOURCE_DIAMOND_COST_100")).NumberValue;
             Globals.ResourceDiamondCost1000 = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("RESOURCE_DIAMOND_COST_1000")).NumberValue;
