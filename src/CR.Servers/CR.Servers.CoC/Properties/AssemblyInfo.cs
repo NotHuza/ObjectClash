@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("CR.Servers.CoC")]
 [assembly: AssemblyDescription("A .NET Clash of Clans v9.256.20 Server Emulator")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Ultapower")]
+[assembly: AssemblyCompany("Ultrapower")]
 [assembly: AssemblyProduct("CR.Servers.CoC")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
