@@ -16,7 +16,7 @@ using CR.Servers.Files.CSV_Reader;
 
         public override string Name { get; set; }
 
-        public bool Disabled { get; set;
+        public bool Disabled { get; set; }
 
         public string TID { get; set; }
 
