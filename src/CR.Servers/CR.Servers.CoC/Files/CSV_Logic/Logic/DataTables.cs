@@ -7,47 +7,47 @@ namespace CR.Servers.CoC.Files.CSV_Logic.Logic
 {
     internal class DataTables
     {
-        internal BuidilngData GetBuildingByName(string str)
+        internal static BuidilngData GetBuildingByName(string str)
         {
             return (BuildingData) CSV.Tables.Get(Gamefile.Buildings).GetData(str);
         }
 
-        internal ResourceData GetResourceByName(string str)
+        internal static ResourceData GetResourceByName(string str)
         {
             return (ResourceData) CSV.Tables.Get(Gamefile.Resources).GetData(str);
         }
 
-        internal CharacterData GetCharacterByName(string str)
+        internal static CharacterData GetCharacterByName(string str)
         {
             return (ResourceData) CSV.Tables.Get(Gamefile.Characters).GetData(str);
         }
 
-        internal BuildingClassData GetBuildingClassByName(string str)
+        internal static BuildingClassData GetBuildingClassByName(string str)
         {
             return (BuildingClassData) CSV.Tables.Get(Gamefile.Building_Classes).GetData(str);
         }
 
-        internal ObstacleData GetObstacleByName(string str)
+        internal static ObstacleData GetObstacleByName(string str)
         {
             return (ObstacleData) CSV.Tables.Get(Gamefile.Obstacles).GetData(str);
         }
 
-        internal GlobalData GetGlobalByName(string str)
+        internal static GlobalData GetGlobalByName(string str)
         {
             return (GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData(str);
         }
  
-        internal EffectData GetEffectByName(string str)
+        internal static EffectData GetEffectByName(string str)
         {
             return (EffectData) CSV.Tables.Get(Gamefile.Effects).GetData(str);
         }
 
-        internal SpellData GetSpellByName(string str)
+        internal static SpellData GetSpellByName(string str)
         {
             return (SpellData) CSV.Tables.Get(Gamefile.Spells).GetData(str);
         }
 
-        internal VariableData GetVariableByName(string str)
+        internal static VariableData GetVariableByName(string str)
         {
             return (VariableData) CSV.Tables.Get(Gamefile.Variables).GetData(str);
         }
