@@ -81,17 +81,17 @@ using CR.Servers.CoC.Logic.Enums;
         internal static int AttackPrepartionLength;
         internal static int AttackPrepartionLength2;
 
-        public GlobalData GetGlobalData(string str)
+        internal static GlobalData GetGlobalData(string str)
         {
             return DataTables.Csv14Name(str);
         }
 
-        public int GlobalNumberValue(string str)
+        internal static int GlobalNumberValue(string str)
         {
             return this.GetGlobalData(str).NumberValue;
         }
 
-        public bool GlobalBooleanValue(string str)
+        internal bool GlobalBooleanValue(string str)
         {
             return this.GetGlobalData(str).BooleanValue;
         }
@@ -99,45 +99,45 @@ using CR.Servers.CoC.Logic.Enums;
         internal static void Initialize()
         {
             Globals.AllianceCreateResourceData = (ResourceData) CSV.Tables.Get(Gamefile.Resources).GetData(((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("ALLIANCE_CREATE_RESOURCE")).TextValue);
-            Globals.AllianceCreateCost = this.GlobalNumberValue("ALLIANCE_CREATE_COST");
-            Globals.StartingDiamonds = this.GlobalNumberValue("STARTING_DIAMONDS");
-            Globals.StartingGold = this.GlobalNumberValue("STARTING_GOLD");
-            Globals.StartingElixir = this.GlobalNumberValue("STARTING_ELIXIR");
-            Globals.StartingGold2 = this.GlobalNumberValue("STARTING_GOLD2");
-            Globals.StartingElixir2 = this.GlobalNumberValue("STARTING_ELIXIR2");
+            Globals.AllianceCreateCost = Globals.GlobalNumberValue("ALLIANCE_CREATE_COST");
+            Globals.StartingDiamonds = Globals.GlobalNumberValue("STARTING_DIAMONDS");
+            Globals.StartingGold = Globals.GlobalNumberValue("STARTING_GOLD");
+            Globals.StartingElixir = Globals.GlobalNumberValue("STARTING_ELIXIR");
+            Globals.StartingGold2 = Globals.GlobalNumberValue("STARTING_GOLD2");
+            Globals.StartingElixir2 = Globals.GlobalNumberValue("STARTING_ELIXIR2");
 
-            Globals.SpeedUpDiamondCost1Min = this.GlobalNumberValue("SPEED_UP_DIAMOND_COST_1_MIN");
-            Globals.SpeedUpDiamondCost1Hour = this.GlobalNumberValue("SPEED_UP_DIAMOND_COST_1_HOUR");
-            Globals.SpeedUpDiamondCost24Hours = this.GlobalNumberValue("SPEED_UP_DIAMOND_COST_24_HOURS");
-            Globals.SpeedUpDiamondCost1Week = this.GlobalNumberValue("SPEED_UP_DIAMOND_COST_1_WEEK");
+            Globals.SpeedUpDiamondCost1Min = Globals.GlobalNumberValue("SPEED_UP_DIAMOND_COST_1_MIN");
+            Globals.SpeedUpDiamondCost1Hour = Globals.GlobalNumberValue("SPEED_UP_DIAMOND_COST_1_HOUR");
+            Globals.SpeedUpDiamondCost24Hours = Globals.GlobalNumberValue("SPEED_UP_DIAMOND_COST_24_HOURS");
+            Globals.SpeedUpDiamondCost1Week = Globals.GlobalNumberValue("SPEED_UP_DIAMOND_COST_1_WEEK");
 
-            Globals.Village2SpeedUpDiamondCost1Min = this.GlobalNumberValue("VILLAGE2_SPEED_UP_DIAMOND_COST_1_MIN");
-            Globals.Village2SpeedUpDiamondCost1Hour = this.GlobalNumberValue("VILLAGE2_SPEED_UP_DIAMOND_COST_1_HOUR");
-            Globals.Village2SpeedUpDiamondCost24Hours = this.GlobalNumberValue("VILLAGE2_SPEED_UP_DIAMOND_COST_24_HOURS");
-            Globals.Village2SpeedUpDiamondCost1Week = this.GlobalNumberValue("VILLAGE2_SPEED_UP_DIAMOND_COST_1_WEEK");
+            Globals.Village2SpeedUpDiamondCost1Min = Globals.GlobalNumberValue("VILLAGE2_SPEED_UP_DIAMOND_COST_1_MIN");
+            Globals.Village2SpeedUpDiamondCost1Hour = Globals.GlobalNumberValue("VILLAGE2_SPEED_UP_DIAMOND_COST_1_HOUR");
+            Globals.Village2SpeedUpDiamondCost24Hours = Globals.GlobalNumberValue("VILLAGE2_SPEED_UP_DIAMOND_COST_24_HOURS");
+            Globals.Village2SpeedUpDiamondCost1Week = Globals.GlobalNumberValue("VILLAGE2_SPEED_UP_DIAMOND_COST_1_WEEK");
 
-            Globals.ResourceDiamondCost100 = this.GlobalNumberValue("RESOURCE_DIAMOND_COST_100");
-            Globals.ResourceDiamondCost1000 = this.GlobalNumberValue("RESOURCE_DIAMOND_COST_1000");
-            Globals.ResourceDiamondCost10000 = this.GlobalNumberValue("RESOURCE_DIAMOND_COST_10000");
-            Globals.ResourceDiamondCost100000 = this.GlobalNumberValue("RESOURCE_DIAMOND_COST_100000");
-            Globals.ResourceDiamondCost1000000 = this.GlobalNumberValue("RESOURCE_DIAMOND_COST_1000000");
-            Globals.ResourceDiamondCost10000000 = this.GlobalNumberValue("RESOURCE_DIAMOND_COST_10000000");
+            Globals.ResourceDiamondCost100 = Globals.GlobalNumberValue("RESOURCE_DIAMOND_COST_100");
+            Globals.ResourceDiamondCost1000 = Globals.GlobalNumberValue("RESOURCE_DIAMOND_COST_1000");
+            Globals.ResourceDiamondCost10000 = Globals.GlobalNumberValue("RESOURCE_DIAMOND_COST_10000");
+            Globals.ResourceDiamondCost100000 = Globals.GlobalNumberValue("RESOURCE_DIAMOND_COST_100000");
+            Globals.ResourceDiamondCost1000000 = Globals.GlobalNumberValue("RESOURCE_DIAMOND_COST_1000000");
+            Globals.ResourceDiamondCost10000000 = Globals.GlobalNumberValue("RESOURCE_DIAMOND_COST_10000000");
 
-            Globals.DarkElixirDiamondCost1 = this.GlobalNumberValue("DARK_ELIXIR_DIAMOND_COST_1");
-            Globals.DarkElixirDiamondCost10 = this.GlobalNumberValue("DARK_ELIXIR_DIAMOND_COST_10");
-            Globals.DarkElixirDiamondCost100 = this.GlobalNumberValue("DARK_ELIXIR_DIAMOND_COST_100");
-            Globals.DarkElixirDiamondCost1000 = this.GlobalNumberValue("DARK_ELIXIR_DIAMOND_COST_1000");
-            Globals.DarkElixirDiamondCost10000 = this.GlobalNumberValue("DARK_ELIXIR_DIAMOND_COST_10000");
-            Globals.DarkElixirDiamondCost100000 = this.GlobalNumberValue("DARK_ELIXIR_DIAMOND_COST_100000");
+            Globals.DarkElixirDiamondCost1 = Globals.GlobalNumberValue("DARK_ELIXIR_DIAMOND_COST_1");
+            Globals.DarkElixirDiamondCost10 = Globals.GlobalNumberValue("DARK_ELIXIR_DIAMOND_COST_10");
+            Globals.DarkElixirDiamondCost100 = Globals.GlobalNumberValue("DARK_ELIXIR_DIAMOND_COST_100");
+            Globals.DarkElixirDiamondCost1000 = Globals.GlobalNumberValue("DARK_ELIXIR_DIAMOND_COST_1000");
+            Globals.DarkElixirDiamondCost10000 = Globals.GlobalNumberValue("DARK_ELIXIR_DIAMOND_COST_10000");
+            Globals.DarkElixirDiamondCost100000 = Globals.GlobalNumberValue("DARK_ELIXIR_DIAMOND_COST_100000");
 
-            Globals.Village2ResourceDiamondCost100 = this.GlobalNumberValue("VILLAGE2_RESOURCE_DIAMOND_COST_100");
-            Globals.Village2ResourceDiamondCost1000 = this.GlobalNumberValue("VILLAGE2_RESOURCE_DIAMOND_COST_1000");
-            Globals.Village2ResourceDiamondCost10000 = this.GlobalNumberValue("VILLAGE2_RESOURCE_DIAMOND_COST_10000");
-            Globals.Village2ResourceDiamondCost100000 = this.GlobalNumberValue("VILLAGE2_RESOURCE_DIAMOND_COST_100000");
-            Globals.Village2ResourceDiamondCost1000000 = this.GlobalNumberValue("VILLAGE2_RESOURCE_DIAMOND_COST_1000000");
-            Globals.Village2ResourceDiamondCost10000000 = this.GlobalNumberValue("VILLAGE2_RESOURCE_DIAMOND_COST_10000000");
+            Globals.Village2ResourceDiamondCost100 = Globals.GlobalNumberValue("VILLAGE2_RESOURCE_DIAMOND_COST_100");
+            Globals.Village2ResourceDiamondCost1000 = Globals.GlobalNumberValue("VILLAGE2_RESOURCE_DIAMOND_COST_1000");
+            Globals.Village2ResourceDiamondCost10000 = Globals.GlobalNumberValue("VILLAGE2_RESOURCE_DIAMOND_COST_10000");
+            Globals.Village2ResourceDiamondCost100000 = Globals.GlobalNumberValue("VILLAGE2_RESOURCE_DIAMOND_COST_100000");
+            Globals.Village2ResourceDiamondCost1000000 = Globals.GlobalNumberValue("VILLAGE2_RESOURCE_DIAMOND_COST_1000000");
+            Globals.Village2ResourceDiamondCost10000000 = Globals.GlobalNumberValue("VILLAGE2_RESOURCE_DIAMOND_COST_10000000");
 
-            Globals.WorkerCost2Nd = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("WORKER_COST_2ND")).NumberValue;
+            Globals.WorkerCost2Nd = Globals.GlobalNumberValue("WORKER_COST_2ND");
             Globals.WorkerCost3Rd = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("WORKER_COST_3RD")).NumberValue;
             Globals.WorkerCost4Th = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("WORKER_COST_4TH")).NumberValue;
             Globals.WorkerCost5Th = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("WORKER_COST_5TH")).NumberValue;
