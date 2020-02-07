@@ -192,18 +192,18 @@ using Packets;
             this.FreeDiamonds += Diamonds;
         }
 
-        internal void AddExperience(int ExpPoints)
+        internal void AddExperience(int xp)
         {
-            if(ExpPoints > 0)
+            if(xp > 0)
             {
-                ExperienceLevelData ExperienceData = (ExperienceLevelData) CSV.Tables.Get(Gamefile.Experience_Levels).GetDataWithID(this.ExpLevel - 1);
+                ExperienceLevelData ed = (ExperienceLevelData) CSV.Tables.Get(Gamefile.Experience_Levels).GetDataWithID(this.ExpLevel - 1);
 
-                this.ExpPoints += ExpPoints;
+                this.ExpPoints += xp;
 
-                if(this.ExpPoints >= ExperienceData?.ExpPoints)
+                if(this.ExpPoints >= ed?.ExpPoints)
                 {
                     this.ExpLevel++;
-                    this.ExpPoints -= ExperienceData.ExpPoints;
+                    this.ExpPoints -= ed.ExpPoints;
                 }
             }
         }
@@ -477,6 +477,7 @@ using Packets;
 
             Json.Add("score", this.Score);
             Json.Add("duel_score", this.DuelScore);
+            Json.Ads("attack_win_cnt", this.Wins);
 
             if (this.RedPackageState)
             {
