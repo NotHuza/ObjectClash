@@ -28,12 +28,12 @@ namespace CR.Servers.CoC
             Console.SetWindowSize(Width, Height);
 
             Servers.Core.Consoles.Colorful.Console.WriteWithGradient(@"
-              ___ ___                        _________ .__                .__     
-             /   |   \ __ _______________    \_   ___ \|  | _____    _____|  |__  
-            /    ~    \  |  \___   /\__  \   /    \  \/|  | \__  \  /  ___/  |  \ 
-            \    Y    /  |  //    /  / __ \_ \     \___|  |__/ __ \_\___ \|   Y  \
-             \___|_  /|____//_____ \(____  /  \______  /____(____  /____  >___|  /
-                   \/             \/     \/          \/          \/     \/     \/                                                                                                            Clash Edition
+                              ___ ___                        _________ .__                .__     
+                             /   |   \ __ _______________    \_   ___ \|  | _____    _____|  |__  
+                            /    ~    \  |  \___   /\__  \   /    \  \/|  | \__  \  /  ___/  |  \ 
+                            \    Y    /  |  //    /  / __ \_ \     \___|  |__/ __ \_\___ \|   Y  \
+                             \___|_  /|____//_____ \(____  /  \______  /____(____  /____  >___|  /
+                                   \/             \/     \/          \/          \/     \/     \/                                                                                                            Clash Edition
             ", Color.OrangeRed, Color.LimeGreen, 14);
 
             Console.ForegroundColor = ConsoleColor.Blue;
