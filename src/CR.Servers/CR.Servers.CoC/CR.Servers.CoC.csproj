@@ -211,6 +211,7 @@
     <Compile Include="Files\CSV_Logic\Logic\BuildingData.cs" />
     <Compile Include="Files\CSV_Logic\Logic\CharacterData.cs" />
     <Compile Include="Files\CSV_Logic\Logic\DecoData.cs" />
+    <Compile Include="Files\CSV_Logic\Logic\EffectData.cs" />
     <Compile Include="Files\CSV_Logic\Logic\ExperienceLevelData.cs" />
     <Compile Include="Files\CSV_Logic\Logic\GlobalData.cs" />
     <Compile Include="Files\CSV_Logic\Logic\HeroData.cs" />
