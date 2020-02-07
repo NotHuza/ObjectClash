@@ -438,6 +438,7 @@
     <Compile Include="Packets\Commands\Client\Speed_Up_All_Training_V2.cs" />
     <Compile Include="Packets\Debug.cs" />
     <Compile Include="Packets\Debugs\Add_Castle_Unit.cs" />
+    <Compile Include="Packets\Debugs\Add_Diamonds_Debug.cs" />
     <Compile Include="Packets\Debugs\Add_Spells.cs" />
     <Compile Include="Packets\Debugs\Add_Units.cs" />
     <Compile Include="Packets\Debugs\Clear_All_Obstacles.cs" />
@@ -456,12 +457,14 @@
     <Compile Include="Packets\Debugs\Set_Bases.cs" />
     <Compile Include="Packets\Debugs\Set_Exp_Level.cs" />
     <Compile Include="Packets\Debugs\Set_Score.cs" />
+    <Compile Include="Packets\Debugs\Upgrade_All_Buildings.cs" />
     <Compile Include="Packets\Enums\AddFriendErrorReason.cs" />
     <Compile Include="Packets\Enums\AllianceErrorReason.cs" />
     <Compile Include="Packets\Enums\FriendListType.cs" />
     <Compile Include="Packets\Enums\LiveReplayErrorReason.cs" />
     <Compile Include="Packets\Enums\LoginFailedReason.cs" />
     <Compile Include="Packets\Enums\NameErrorReason.cs" />
+    <Compile Include="Packets\Enums\ServiceNode.cs" />
     <Compile Include="Packets\Enums\UnlockAccountReason.cs" />
     <Compile Include="Packets\Factory.cs" />
     <Compile Include="Packets\Message.cs" />
@@ -552,6 +555,7 @@
     <Compile Include="Packets\Messages\Server\Home\VisitHomeDataMessage.cs" />
     <Compile Include="Packets\Messages\Server\Home\WaitingToGoHomeMessage.cs" />
     <Compile Include="Packets\Messages\Server\Home\Village2VisitAvatarDataMessage.cs" />
+    <Compile Include="Packets\Messages\Server\Leaderboard\Global_Clans.cs" />
     <Compile Include="Packets\ServerCommand.cs" />
     <Compile Include="Packets\Stream\RC4Encrypter.cs" />
     <Compile Include="Packets\Stream\Scrambler\RC4Scrambler.cs" />
@@ -1016,7 +1020,6 @@
   <ItemGroup>
     <Folder Include="Packets\Debugs\Administrator\" />
     <Folder Include="Packets\Debugs\Moderator\" />
-    <Folder Include="Packets\Messages\Server\Leaderboard\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
