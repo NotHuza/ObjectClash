@@ -478,6 +478,7 @@ using CR.Servers.CoC.Packets;
             Json.Add("score", this.Score);
             Json.Add("duel_score", this.DuelScore);
             Json.Add("attack_win_cnt", this.Wins);
+            Json.Add("attack_lose_cnt", this.Loses);
 
             if (this.RedPackageState)
             {
