@@ -1,8 +1,12 @@
 ﻿namespace CR.Servers.CoC.Packets.Messages.Server.Alliances
 {
+    using CR.Servers.CoC.Core;
     using CR.Servers.CoC.Logic;
     using CR.Servers.CoC.Logic.Clan;
     using CR.Servers.Extensions.List;
+    using CR.Servers.Logic.Enums;
+    using CR.Servers.CoC.Packets.Enums;
+    using System.Linq;
 
     internal class JoinableAllianceListMessage : Message
     {
@@ -10,6 +14,7 @@
 
         public JoinableAllianceListMessage(Device Device) : base(Device)
         {
+
         }
 
         internal override short Type
@@ -17,6 +22,14 @@
             get
             {
                 return 24304;
+            }
+        }
+
+        internal ServiceNode Node
+        {
+            get
+            {
+                return ServiceNode.Alliance;
             }
         }
 
@@ -28,7 +41,7 @@
                 Alliance.Header.Encode(this.Data);
             }
 
-            this.Data.AddInt(0); //Another list but no one know what is it for
+            this.Data.AddInt(0);
         }
     }
 }
