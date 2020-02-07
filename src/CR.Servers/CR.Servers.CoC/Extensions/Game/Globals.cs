@@ -1,9 +1,9 @@
+using CR.Servers.CoC.Files;
+using CR.Servers.CoC.Files.CSV_Logic.Logic;
+using CR.Servers.CoC.Logic.Enums;
+
 ﻿namespace CR.Servers.CoC.Extensions.Game
 {
-    using CR.Servers.CoC.Files;
-    using CR.Servers.CoC.Files.CSV_Logic.Logic;
-    using CR.Servers.CoC.Logic.Enums;
-
     internal class Globals
     {
         internal static bool CollectAllResourcesAtOnce;
@@ -116,19 +116,19 @@
             Globals.Village2SpeedUpDiamondCost24Hours = this.GlobalNumberValue("VILLAGE2_SPEED_UP_DIAMOND_COST_24_HOURS");
             Globals.Village2SpeedUpDiamondCost1Week = this.GlobalNumberValue("VILLAGE2_SPEED_UP_DIAMOND_COST_1_WEEK");
 
-            Globals.ResourceDiamondCost100 = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("RESOURCE_DIAMOND_COST_100")).NumberValue;
-            Globals.ResourceDiamondCost1000 = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("RESOURCE_DIAMOND_COST_1000")).NumberValue;
-            Globals.ResourceDiamondCost10000 = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("RESOURCE_DIAMOND_COST_10000")).NumberValue;
-            Globals.ResourceDiamondCost100000 = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("RESOURCE_DIAMOND_COST_100000")).NumberValue;
-            Globals.ResourceDiamondCost1000000 = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("RESOURCE_DIAMOND_COST_1000000")).NumberValue;
-            Globals.ResourceDiamondCost10000000 = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("RESOURCE_DIAMOND_COST_10000000")).NumberValue;
+            Globals.ResourceDiamondCost100 = this.GlobalNumberValue("RESOURCE_DIAMOND_COST_100");
+            Globals.ResourceDiamondCost1000 = this.GlobalNumberValue("RESOURCE_DIAMOND_COST_1000");
+            Globals.ResourceDiamondCost10000 = this.GlobalNumberValue("RESOURCE_DIAMOND_COST_10000");
+            Globals.ResourceDiamondCost100000 = this.GlobalNumberValue("RESOURCE_DIAMOND_COST_100000");
+            Globals.ResourceDiamondCost1000000 = this.GlobalNumberValue("RESOURCE_DIAMOND_COST_1000000");
+            Globals.ResourceDiamondCost10000000 = this.GlobalNumberValue("RESOURCE_DIAMOND_COST_10000000");
 
-            Globals.DarkElixirDiamondCost1 = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("DARK_ELIXIR_DIAMOND_COST_1")).NumberValue;
-            Globals.DarkElixirDiamondCost10 = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("DARK_ELIXIR_DIAMOND_COST_10")).NumberValue;
-            Globals.DarkElixirDiamondCost100 = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("DARK_ELIXIR_DIAMOND_COST_100")).NumberValue;
-            Globals.DarkElixirDiamondCost1000 = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("DARK_ELIXIR_DIAMOND_COST_1000")).NumberValue;
-            Globals.DarkElixirDiamondCost10000 = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("DARK_ELIXIR_DIAMOND_COST_10000")).NumberValue;
-            Globals.DarkElixirDiamondCost100000 = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("DARK_ELIXIR_DIAMOND_COST_100000")).NumberValue;
+            Globals.DarkElixirDiamondCost1 = this.GlobalNumberValue("DARK_ELIXIR_DIAMOND_COST_1");
+            Globals.DarkElixirDiamondCost10 = this.GlobalNumberValue("DARK_ELIXIR_DIAMOND_COST_10");
+            Globals.DarkElixirDiamondCost100 = this.GlobalNumberValue("DARK_ELIXIR_DIAMOND_COST_100");
+            Globals.DarkElixirDiamondCost1000 = this.this.GlobalNumberValue("DARK_ELIXIR_DIAMOND_COST_1000");
+            Globals.DarkElixirDiamondCost10000 = this.GlobalNumberValue("DARK_ELIXIR_DIAMOND_COST_10000");
+            Globals.DarkElixirDiamondCost100000 = this.GlobalNumberValue("DARK_ELIXIR_DIAMOND_COST_100000");
 
             Globals.Village2ResourceDiamondCost100 = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("VILLAGE2_RESOURCE_DIAMOND_COST_100")).NumberValue;
             Globals.Village2ResourceDiamondCost1000 = ((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("VILLAGE2_RESOURCE_DIAMOND_COST_1000")).NumberValue;
