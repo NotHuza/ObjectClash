@@ -11,7 +11,7 @@ using CR.Servers.Extensions.List;
 using CR.Servers.Logic.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Packets;
+using CR.Servers.CoC.Packets;
 
 ﻿namespace CR.Servers.CoC.Logic
 {
@@ -477,7 +477,7 @@ using Packets;
 
             Json.Add("score", this.Score);
             Json.Add("duel_score", this.DuelScore);
-            Json.Ads("attack_win_cnt", this.Wins);
+            Json.Add("attack_win_cnt", this.Wins);
 
             if (this.RedPackageState)
             {
