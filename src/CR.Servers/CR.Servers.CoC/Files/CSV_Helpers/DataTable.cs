@@ -29,84 +29,87 @@
             }
         }
 
-        internal Data Create(Row _Row)
+        internal Data Create(Row _rw)
         {
-            Data _Data;
+            Data _dt;
 
             switch ((Gamefile) this.Index)
             {
                 case Gamefile.Buildings:
-                    _Data = new BuildingData(_Row, this);
+                    _dt = new BuildingData(_rw, this);
                     break;
                 case Gamefile.Locales:
-                    _Data = new LocaleData(_Row, this);
+                    _dt = new LocaleData(_rw, this);
                     break;
                 case Gamefile.Resources:
-                    _Data = new ResourceData(_Row, this);
+                    _dt = new ResourceData(_rw, this);
                     break;
                 case Gamefile.Characters:
-                    _Data = new CharacterData(_Row, this);
+                    _dt = new CharacterData(_rw, this);
                     break;
                 case Gamefile.Building_Classes:
-                    _Data = new BuildingClassData(_Row, this);
+                    _dt = new BuildingClassData(_rw, this);
                     break;
                 case Gamefile.Obstacles:
-                    _Data = new ObstacleData(_Row, this);
+                    _dt = new ObstacleData(_rw, this);
+                    break;
+                case Gamefile.Effect:
+                    _dt = new EffectData(_rw, this);
                     break;
                 case Gamefile.Traps:
-                    _Data = new TrapData(_Row, this);
+                    _dt = new TrapData(_rw, this);
                     break;
                 case Gamefile.Globals:
-                    _Data = new GlobalData(_Row, this);
+                    _dt = new GlobalData(_rw, this);
                     break;
                 case Gamefile.Experience_Levels:
-                    _Data = new ExperienceLevelData(_Row, this);
+                    _dt = new ExperienceLevelData(_rw, this);
                     break;
                 case Gamefile.Townhall_Levels:
-                    _Data = new TownhallLevelData(_Row, this);
+                    _dt = new TownhallLevelData(_rw, this);
                     break;
                 case Gamefile.Npcs:
-                    _Data = new NpcData(_Row, this);
+                    _dt = new NpcData(_rw, this);
                     break;
                 case Gamefile.Decos:
-                    _Data = new DecoData(_Row, this);
+                    _dt = new DecoData(_rw, this);
                     break;
                 case Gamefile.Shields:
-                    _Data = new ShieldData(_Row, this);
+                    _dt = new ShieldData(_rw, this);
                     break;
                 case Gamefile.Missions:
-                    _Data = new MissionData(_Row, this);
+                    _dt = new MissionData(_rw, this);
                     break;
                 case Gamefile.Achievements:
-                    _Data = new AchievementData(_Row, this);
+                    _dt = new AchievementData(_rw, this);
                     break;
                 case Gamefile.Spells:
-                    _Data = new SpellData(_Row, this);
+                    _dt = new SpellData(_rw, this);
                     break;
                 case Gamefile.Heroes:
-                    _Data = new HeroData(_Row, this);
+                    _dt = new HeroData(_rw, this);
                     break;
                 case Gamefile.Leagues:
-                    _Data = new LeagueData(_Row, this);
+                    _dt = new LeagueData(_rw, this);
                     break;
                 case Gamefile.Regions:
-                    _Data = new RegionData(_Row, this);
+                    _dt = new RegionData(_rw, this);
                     break;
                 case Gamefile.AllianceBadgeLayer:
-                    _Data = new AllianceBadgeLayerData(_Row, this);
+                    _dt = new AllianceBadgeLayerData(_rw, this);
                     break;
                 case Gamefile.Variables:
-                    _Data = new VariableData(_Row, this);
+                    _dt = new VariableData(_rw, this);
                     break;
                 case Gamefile.Village_Objects:
-                    _Data = new VillageObjectData(_Row, this);
+                    _dt = new VillageObjectData(_rw, this);
                     break;
                 default:
-                    _Data = new Data(_Row, this);
+                    _dt = new Data(_rw, this);
                     break;
             }
 
-            return _Data;
+            return _dt;
         }
 
         internal Data GetDataWithID(int ID)
