@@ -46,5 +46,10 @@ namespace CR.Servers.CoC.Files.CSV_Helpers
         {
             return (SpellData) CSV.Tables.Get(Gamefile.Spells).GetData(str);
         }
+
+        internal VariableData GetVariableByName(string str)
+        {
+            return (VariableData) CSV.Tables.Get(Gamefile.Variables).GetData(str);
+        }
     }
 }
