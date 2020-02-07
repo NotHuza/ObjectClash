@@ -36,8 +36,11 @@ namespace CR.Servers.CoC
                                    \/             \/     \/          \/          \/     \/     \/                                                                                                            Clash Edition
             ", Color.OrangeRed, Color.LimeGreen, 14);
 
+            Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine(@"Ultarpowe Developer Team: Antz, Huza Modz, MeteHun, Alin");
+            Console.WriteLine(@"Ultrapower Developer Team: Antz, Huza Modz, MeteHun, Alin");
+
+            Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(Environment.NewLine);
             Console.WriteLine(@"Huza Clash's programs are protected by our policies, available only to our partner.");
