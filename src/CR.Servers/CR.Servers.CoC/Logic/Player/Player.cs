@@ -1,20 +1,20 @@
+using System;
+using System.Collections.Generic;
+using CR.Servers.CoC.Extensions;
+using CR.Servers.CoC.Extensions.Game;
+using CR.Servers.CoC.Files;
+using CR.Servers.CoC.Files.CSV_Logic.Logic;
+using CR.Servers.CoC.Logic.Clan;
+using CR.Servers.CoC.Logic.Clan.Items;
+using CR.Servers.CoC.Logic.Enums;
+using CR.Servers.Extensions.List;
+using CR.Servers.Logic.Enums;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Packets;
+
 ﻿namespace CR.Servers.CoC.Logic
 {
-    using System;
-    using System.Collections.Generic;
-    using CR.Servers.CoC.Extensions;
-    using CR.Servers.CoC.Extensions.Game;
-    using CR.Servers.CoC.Files;
-    using CR.Servers.CoC.Files.CSV_Logic.Logic;
-    using CR.Servers.CoC.Logic.Clan;
-    using CR.Servers.CoC.Logic.Clan.Items;
-    using CR.Servers.CoC.Logic.Enums;
-    using CR.Servers.Extensions.List;
-    using CR.Servers.Logic.Enums;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
-    using Packets;
-
     internal class Player : PlayerBase
     {
 #if COMMAND_DEBUG
@@ -194,14 +194,17 @@
 
         internal void AddExperience(int ExpPoints)
         {
-            ExperienceLevelData ExperienceData = (ExperienceLevelData) CSV.Tables.Get(Gamefile.Experience_Levels).GetDataWithID(this.ExpLevel - 1);
-
-            this.ExpPoints += ExpPoints;
-
-            if (this.ExpPoints >= ExperienceData?.ExpPoints)
+            if(ExpPoints > 0)
             {
-                this.ExpLevel++;
-                this.ExpPoints -= ExperienceData.ExpPoints;
+                ExperienceLevelData ExperienceData = (ExperienceLevelData) CSV.Tables.Get(Gamefile.Experience_Levels).GetDataWithID(this.ExpLevel - 1);
+
+                this.ExpPoints += ExpPoints;
+
+                if(this.ExpPoints >= ExperienceData?.ExpPoints)
+                {
+                    this.ExpLevel++;
+                    this.ExpPoints -= ExperienceData.ExpPoints;
+                }
             }
         }
 
@@ -539,14 +542,13 @@
             return this.Diamonds >= Count;
         }
 
-        internal void UseDiamonds(int Count)
+        internal void UseDiamonds(int cnt)
         {
-            this.Diamonds -= Count;
-            this.FreeDiamonds -= Count;
+            this.Diamonds -= cnt;
 
-            if (this.FreeDiamonds < 0)
+            if(this.FreeDiamonds > this.Diamonds)
             {
-                this.FreeDiamonds = 0;
+                this.FreeDiamonds = this.Diamonds;
             }
         }
 
