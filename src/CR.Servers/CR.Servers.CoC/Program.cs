@@ -36,12 +36,14 @@ namespace CR.Servers.CoC
                    \/             \/     \/          \/          \/     \/     \/                                                                                                            Clash Edition
             ", Color.OrangeRed, Color.LimeGreen, 14);
 
+            Console.ForegroundColor = ComsoleColor.Blue;
+            Console.WriteLine(@"Ultarpowe Developer Team: Antz, Huza Modz, MeteHun, Alin");
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(Environment.NewLine);
-            Console.WriteLine(@"Clashers Republic's programs are protected by our policies, available only to our partner.");
-            Console.WriteLine(@"Clashers Republic's programs are under the 'Proprietary' license.");
-            Console.WriteLine(@"Clashers Republic is NOT affiliated to 'Supercell Oy'.");
-            Console.WriteLine(@"Clashers Republic does NOT own 'Clash of Clans', 'Boom Beach', 'Clash Royale'.");
+            Console.WriteLine(@"Huza Clash's programs are protected by our policies, available only to our partner.");
+            Console.WriteLine(@"Huza Clash Republic's programs are under the 'Proprietary' license.");
+            Console.WriteLine(@"Huza Clash is NOT affiliated to 'Supercell Oy'.");
+            Console.WriteLine(@"Huza Clash does NOT own 'Clash of Clans', 'Boom Beach', 'Clash Royale'.");
             Console.WriteLine();
             Console.WriteLine(Assembly.GetExecutingAssembly().GetName().Name + " is now starting..." +  Environment.NewLine);
             
