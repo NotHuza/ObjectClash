@@ -62,7 +62,9 @@ using CR.Servers.CoC.Packets;
         [JsonProperty] internal bool Locked;
 
         [JsonProperty] internal int LogSeed;
-        [JsonProperty] internal int Loses;
+        [JsonProperty] internal int AttackLoseCnt;
+        [JsonProperty] internal int DefenseWinCnt;
+        [JsonProperty] internal int DefenseLoseCnt;
         [JsonProperty] internal int LowID;
 
         [JsonProperty] internal ModSlot ModSlot;
@@ -88,7 +90,7 @@ using CR.Servers.CoC.Packets;
         [JsonProperty] internal List<int> Tutorials = new List<int>();
         [JsonProperty] internal DateTime Update = DateTime.UtcNow;
 
-        [JsonProperty] internal int Wins;
+        [JsonProperty] internal int AttackWinCnt;
 
         internal Player()
         {
@@ -343,10 +345,10 @@ using CR.Servers.CoC.Packets;
             _Packet.AddInt(this.Score);
             _Packet.AddInt(this.DuelScore);
 
-            _Packet.AddInt(this.Wins);
-            _Packet.AddInt(this.Loses);
-            _Packet.AddInt(0); // Def Wins
-            _Packet.AddInt(0); // Def Loses
+            _Packet.AddInt(this.AttackWinCnt);
+            _Packet.AddInt(this.AttackLoseCnt);
+            _Packet.AddInt(this.DefenseWinCnt);
+            _Packet.AddInt(this.DefenseLoseCnt);
 
             _Packet.AddInt(0); //WarGold
             _Packet.AddInt(0); //WarElixir
@@ -477,8 +479,10 @@ using CR.Servers.CoC.Packets;
 
             Json.Add("score", this.Score);
             Json.Add("duel_score", this.DuelScore);
-            Json.Add("attack_win_cnt", this.Wins);
-            Json.Add("attack_lose_cnt", this.Loses);
+            Json.Add("attack_win_cnt", this.AttackWinCnt);
+            Json.Add("attack_lose_cnt", this.AttackLoseCnt);
+            Json.Add("defense_win_cnt", this.DefenseWinCnt);
+            Json.Add("defense_lose_cnt", this.DefenseLoseCnt);
 
             if (this.RedPackageState)
             {
