@@ -40,7 +40,7 @@ using CR.Servers.Files.CSV_Reader;
 
         public int AllianceBadge { get; set; }
 
-        public bool[] public bool[] SinglePlayer { get; set; }
+        public bool[] SinglePlayer { get; set; }
 
         internal override void Process()
         {
