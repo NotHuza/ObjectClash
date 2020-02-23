@@ -5,7 +5,7 @@ using CR.Servers.Files.CSV_Reader;
 {
     internal class NpcData : Data
     {
-        internal CharacterData UnitTypeD;
+        internal CharacterData unitTypeD;
 
         public NpcData(Row rw, DataTable dt) : base(rw, dt)
         {
@@ -44,7 +44,7 @@ using CR.Servers.Files.CSV_Reader;
 
         internal override void Process()
         {
-          this.unitTypeD = DataTables.GetCharacterByName(this.UnitType);
+            this.unitTypeD = DataTables.GetCharacterByName(this.UnitType);
         }
     }
 }
