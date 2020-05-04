@@ -32,9 +32,11 @@ namespace CR.Servers.CoC.Core
         internal static Logger Logger;
         internal static Duels Duels;
         internal static Processor Processor;
+        internal static DateTime StartTime;
 
         internal static bool Started;
         internal static bool Closing;
+        
 
         internal static void Initialize()
         {
@@ -66,6 +68,7 @@ namespace CR.Servers.CoC.Core
             Resources.Duels = new Duels();
             Resources.Random = new XorShift();
             Resources.Gateway = new Gateway();
+            Resources.StartTime = DateTime.UtcNow;
             Resources.Timers = new Timers();
             Resources.Started = true;
 
