@@ -111,18 +111,6 @@
             }
         }
 
-        internal int StarBonusCounter
-        {
-            get
-            {
-                return this.Variables.GetCountByGlobalId(37000000);
-            }
-            set
-            {
-                this.Variables.Set(37000000, value);
-            }
-        }
-
         internal int Map
         {
             get
@@ -244,36 +232,36 @@
             }
         }
 
-        internal int GetUnitUpgradeLevel(Data dt)
+        internal int GetUnitUpgradeLevel(Data Data)
         {
-            return Data.GetDataType() == 4 ? this.UnitUpgrades.GetCountByData(dt) : this.SpellUpgrades.GetCountByData(dt);
+            return Data.GetDataType() == 4 ? this.UnitUpgrades.GetCountByData(Data) : this.SpellUpgrades.GetCountByData(Data);
         }
 
-        internal void IncreaseUnitUpgradeLevel(Data dt)
+        internal void IncreaseUnitUpgradeLevel(Data Data)
         {
             if (Data.GetDataType() == 4)
             {
-                this.UnitUpgrades.Add(dt, 1);
+                this.UnitUpgrades.Add(Data, 1);
             }
             else
             {
-                this.SpellUpgrades.Add(dt, 1);
+                this.SpellUpgrades.Add(Data, 1);
             }
         }
 
-        internal int GetHeroUpgradeLevel(Data dt)
+        internal int GetHeroUpgradeLevel(Data Data)
         {
-            return this.HeroUpgrades.GetCountByData(dt);
+            return this.HeroUpgrades.GetCountByData(Data);
         }
 
-        internal void IncreaseHeroUpgradeLevel(Data dt)
+        internal void IncreaseHeroUpgradeLevel(Data Data)
         {
-            this.HeroUpgrades.Add(dt, 1);
+            this.HeroUpgrades.Add(Data, 1);
         }
 
-        internal int GetAvailableResourceStorage(Data rdt)
+        internal int GetAvailableResourceStorage(Data Resource)
         {
-            return this.ResourceCaps.GetCountByData(rdt) - this.Resources.GetCountByData(rdt);
+            return this.ResourceCaps.GetCountByData(Resource) - this.Resources.GetCountByData(Resource);
         }
     }
 }

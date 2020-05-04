@@ -52,6 +52,11 @@ namespace CR.Servers.CoC.Logic.Slots
             return false;
         }
 
+        internal object Get123(long allianceId)
+        {
+            throw new NotImplementedException();
+        }
+
         internal void Add(Alliance Clan)
         {
             if (this.ContainsKey(Clan.AllianceId))
