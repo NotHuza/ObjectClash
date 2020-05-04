@@ -1,4 +1,4 @@
-## HuzaClash' Republic - Project
+## ObjectClash' Republic - Project
 
 ***HuzaClash
 *** is a _3 Dimension Project_.
