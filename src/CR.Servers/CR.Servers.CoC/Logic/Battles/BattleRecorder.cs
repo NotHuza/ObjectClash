@@ -49,12 +49,12 @@ namespace CR.Servers.CoC.Logic.Battles
             json.Add("timestamp", this.Timestamp);
             json.Add("globals", this.Globals);
             json.Add("calendar", new JObject());
-            /*
+            
             if (this.PreparationSkip != null)
             {
                 json.Add("prep_skip", this.PreparationSkip);
             }
-            */
+            
             return json;
         }
     }

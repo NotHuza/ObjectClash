@@ -166,7 +166,7 @@
                     {
                         EndSubTick = subTick,
                         Commands = commands,
-                        //SpectatorTeam1 = this.Viewers.Count
+                        SpectatorTeam1 = this.Viewers.Count
                     }.Send();
                 }
                 else

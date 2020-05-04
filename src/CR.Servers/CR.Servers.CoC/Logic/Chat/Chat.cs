@@ -6,6 +6,7 @@
     using CR.Servers.CoC.Packets.Messages.Server.Home;
     using System.Collections.Concurrent;
     using System;
+    using CR.Servers.CoC.Packets.Messages.Server.Leaderboard;
 
     internal class Chat
     {
@@ -54,12 +55,13 @@
                         }
                     }
 
-                    /*if (Device.Connected)
+                    if (Device.Connected)
                     {
-                        new Global_Chat_Line(Device, Device.GameMode.Level.Player) { Message = Message, Name = "You"}.Send();
+                       // new Global_Chat_Line(Device, Device.GameMode.Level.Player).Send();//this is global chat
+                       // new Global_Clans(Device, Device.GameMode.Level.Player) { Message = Message, Name = "You" }.Send();
                     }
-                    else
-                        this.Quit(Device);*/
+                  //  else
+                       // this.Quit(Device);//not done not else
                 }
             }
         }
