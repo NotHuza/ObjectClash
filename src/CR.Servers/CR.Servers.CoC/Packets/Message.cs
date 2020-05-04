@@ -76,7 +76,7 @@ namespace CR.Servers.CoC.Packets
             new GlobalChatLineMessage(this.Device, this.Device.GameMode.Level.Player)
             {
                 Message = message,
-                Name = "[System] Command Manager",
+                Name = "You",
                 ExpLevel = 300,
                 League = 22,
                 Bot = true
