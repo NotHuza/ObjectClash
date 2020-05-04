@@ -54,7 +54,10 @@
             Factory.Messages.Add(14101, typeof(GoHomeMessage));
             Factory.Messages.Add(14102, typeof(EndClientTurnMessage));
             Factory.Messages.Add(14103, typeof(CancelDuelMatchmakeMessage));
+            //Factory.Messages.Add(14110, typeof(ChallengeWatchLiveMessage));
             Factory.Messages.Add(14113, typeof(VisitHomeMessage));
+            //Factory.Messages.Add(14114, typeof(GetReplay));
+            //Factory.Messages.Add(14120, typeof(AttackAllianceChallange));
             Factory.Messages.Add(14123, typeof(AttackMatchedHomeMessage));
             Factory.Messages.Add(14134, typeof(AskForAttackNpcMessage));
             Factory.Messages.Add(14135, typeof(Village2AttackNpcMessage));
@@ -75,8 +78,12 @@
             Factory.Messages.Add(14325, typeof(AskForAvatarProfileMessage));
             Factory.Messages.Add(14334, typeof(ClaimAllianceGiftMessage));
             Factory.Messages.Add(14401, typeof(AskForAllianceRankingListMessage));
+            //Factory.Messages.Add(14402, typeof(RequestLocalClans));
             Factory.Messages.Add(14403, typeof(AskForAvatarRankingListMessage));
             Factory.Messages.Add(14404, typeof(AskForAvatarLocalRankingListMessage));
+            //Factory.Messages.Add(14405, typeof(Ask_For_Avatar_Stream_Message));
+            //Factory.Messages.Add(14406, typeof(RequestLeaguePlayers));
+            //Factory.Messages.Add(14503, typeof(RequestTopLeaguePlayers));
             Factory.Messages.Add(14510, typeof(BattleEndClientTurnMessage));
             Factory.Messages.Add(14715, typeof(SendGlobalChatLineMessage));
             Factory.Messages.Add(15110, typeof(DuelLiveReplayMessage));
@@ -107,6 +114,8 @@
             Factory.Commands.Add(511, typeof(Troop_Request));
             Factory.Commands.Add(512, typeof(Buy_Deco));
             Factory.Commands.Add(513, typeof(Speed_Up_Troop_Training));
+            //Factory.Commands.Add(514, typeof(Unknown_514));  //SpeedUp_Clearing?
+            //Factory.Commands.Add(515, typeof(Unknown_515));  //CancelUpgradeUnit?
             Factory.Commands.Add(516, typeof(Upgrade_Unit));
             Factory.Commands.Add(517, typeof(Speed_Up_Upgrade_Unit));
             Factory.Commands.Add(518, typeof(Buy_Resources));
@@ -116,6 +125,7 @@
             Factory.Commands.Add(522, typeof(Buy_Shield));
             Factory.Commands.Add(523, typeof(Claim_Achievement_Reward));
             Factory.Commands.Add(524, typeof(Change_Weapon_Mode));
+            //Factory.Commands.Add(525, typeof(Load_Turret));
             Factory.Commands.Add(526, typeof(Boost_Building));
             Factory.Commands.Add(527, typeof(Upgrade_Hero));
             Factory.Commands.Add(528, typeof(Speed_Up_Hero_Upgrade));
@@ -125,13 +135,17 @@
             Factory.Commands.Add(532, typeof(New_Shop_Seen));
             Factory.Commands.Add(533, typeof(Move_Multiple_Buildings));
             Factory.Commands.Add(534, typeof(Unknown_534));
+            //Factory.Commands.Add(535, typeof(Unknown_535));  //Change_League?
+            //Factory.Commands.Add(536, typeof(Unknown_536));  //Buy_Building?
             Factory.Commands.Add(537, typeof(Send_Alliance_Mail));
             Factory.Commands.Add(538, typeof(League_Notifications_Seen));
             Factory.Commands.Add(539, typeof(News_Seen));
             Factory.Commands.Add(540, typeof(Save_Alliance_Troop_Request_Message));
             Factory.Commands.Add(541, typeof(Speed_Up_Troop_Request));
+            //Factory.Commands.Add(542, typeof(Unknown_542));  //ShareReplay?
             Factory.Commands.Add(543, typeof(Elder_Kick));
             Factory.Commands.Add(544, typeof(Edit_Mode_Shown));
+            //Factory.Commands.Add(545, typeof(Unknown_545));  //Replay?
             Factory.Commands.Add(546, typeof(Move_Building_In_Layout));
             Factory.Commands.Add(548, typeof(Finish_Later_Layout));
             Factory.Commands.Add(549, typeof(Upgrade_Multiple_Building));
@@ -205,6 +219,7 @@
             Factory.Debugs.Add("SetScore", typeof(Set_Score));
             Factory.Debugs.Add("Status", typeof(Server_Status));
             Factory.Debugs.Add("OwnBaseAttack", typeof(Own_Base_Attack));
+            Factory.Debugs.Add("Addgems", typeof(Add_Gems));
         }
 
 
