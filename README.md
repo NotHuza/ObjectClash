@@ -1,6 +1,6 @@
 ## ObjectClash' Republic - Project
 
-***HuzaClash
+***ObjectClash
 *** is a _3 Dimension Project_.
 It has been **written by ***** & ***** from *******' *******. 
 The goal of this project is to ensure a clean, easy-to-die code environment.
