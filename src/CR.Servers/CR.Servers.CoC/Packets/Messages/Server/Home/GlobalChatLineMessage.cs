@@ -1,5 +1,6 @@
 ﻿namespace CR.Servers.CoC.Packets.Messages.Server.Home
 {
+    using CR.Servers.CoC.Core;
     using CR.Servers.CoC.Logic;
     using CR.Servers.Extensions.List;
 
@@ -45,17 +46,14 @@
             this.Data.AddLong(this.UserId);
             this.Data.AddLong(this.UserId);
 
-            if (!this.Bot && this.Player.InAlliance)
+            this.Data.AddBool(this.Player.AllianceId > 0);
+            if (!this.Bot && this.Player.AllianceId > 0)
             {
-                this.Data.AddBool(true);
-
+                //this.Data.AddBool(true);
+               // var _Clan = Resources.Clans.Get123(this.Player.AllianceId);
                 this.Data.AddLong(this.Player.AllianceId);
                 this.Data.AddString(this.Player.Alliance.Header.Name);
                 this.Data.AddInt(this.Player.Alliance.Header.Badge);
-            }
-            else
-            {
-                this.Data.AddBool(false);
             }
         }
     }
