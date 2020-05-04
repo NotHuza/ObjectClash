@@ -219,7 +219,7 @@
             Factory.Debugs.Add("SetScore", typeof(Set_Score));
             Factory.Debugs.Add("Status", typeof(Server_Status));
             Factory.Debugs.Add("OwnBaseAttack", typeof(Own_Base_Attack));
-            Factory.Debugs.Add("Addgems", typeof(Add_Gems));
+          //  Factory.Debugs.Add("Addgems", typeof(Add_Gems));
         }
 
 
