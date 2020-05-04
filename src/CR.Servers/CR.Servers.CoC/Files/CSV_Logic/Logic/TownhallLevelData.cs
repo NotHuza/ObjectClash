@@ -1,16 +1,16 @@
-using System.Collections.Generic;
-using CR.Servers.CoC.Core;
-using CR.Servers.CoC.Files.CSV_Helpers;
-using CR.Servers.CoC.Logic.Enums;
-using CR.Servers.Files.CSV_Reader;
-
 ﻿namespace CR.Servers.CoC.Files.CSV_Logic.Logic
 {
+    using System.Collections.Generic;
+    using CR.Servers.CoC.Core;
+    using CR.Servers.CoC.Files.CSV_Helpers;
+    using CR.Servers.CoC.Logic.Enums;
+    using CR.Servers.Files.CSV_Reader;
+
     internal class TownhallLevelData : Data
     {
         internal Dictionary<Data, int> Caps;
 
-        public TownhallLevelData(Row rw, DataTable dt) : base(rw, dt)
+        public TownhallLevelData(Row Row, DataTable DataTable) : base(Row, DataTable)
         {
             this.Caps = new Dictionary<Data, int>();
             this.LoadTable(CSV.Tables.Get(Gamefile.Buildings));
@@ -19,48 +19,18 @@ using CR.Servers.Files.CSV_Reader;
         }
 
         public override string Name { get; set; }
-
         public int AttackCost { get; set; }
-
         public int ResourceStorageLootPercentage { get; set; }
-
         public int DarkElixirStorageLootPercentage { get; set; }
-
         public int ResourceStorageLootCap { get; set; }
-
         public int DarkElixirStorageLootCap { get; set; }
-
         public int WarPrizeResourceCap { get; set; }
-
         public int WarPrizeDarkElixirCap { get; set; }
-
         public int WarPrizeAllianceExpCap { get; set; }
-
         public int CartLootCapResource { get; set; }
-
         public int CartLootReengagementResource { get; set; }
-
         public int CartLootCapDarkElixir { get; set; }
-
         public int CartLootReengagementDarkElixir { get; set; }
-
-        public int Cannon_gearup { get; set; }
-
-        public int Mortar_gearup { get; set; }
-
-        public int TreasuryGold { get; set; }
-
-        public int TreasuryElixir { get; set; }
-
-        public int TreasuryDarkElixir { get; set; }
-
-        public int TreasuryWarGold { get; set; }
-
-        public int TreasuryWarElixir { get; set; }
-
-        public int TreasuryWarDarkElixir { get; set; }
-
-        public int FriendlyCost { get; set; }
 
         private void LoadTable(DataTable Table)
         {
@@ -75,13 +45,11 @@ using CR.Servers.Files.CSV_Reader;
                         //Logging.Error(this.GetType(), $"Value for {Data.Name} is {Count}. Value {Value}");
                         this.Caps.Add(Data, Count);
                     }
-
                     else
                     {
                         Logging.Error(this.GetType(), "Value " + Value + " is not int value.");
                     }
                 }
-
                 else if (this.DataTable.Datas.Count > 0)
                 {
                     int Count = 0;
@@ -98,7 +66,6 @@ using CR.Servers.Files.CSV_Reader;
 
                     this.Caps.Add(Data, Count);
                 }
-
                 else
                 {
                     this.Caps.Add(Data, 0);

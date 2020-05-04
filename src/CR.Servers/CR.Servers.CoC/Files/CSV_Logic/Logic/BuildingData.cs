@@ -11,8 +11,6 @@
         internal ResourceData BuildResourceData;
         internal ResourceData ProducesResourceData;
 
-        internal EffectData loadAmmoEffectD;
-
         public BuildingData(Row Row, DataTable DataTable) : base(Row, DataTable)
         {
         }
@@ -381,8 +379,6 @@
             {
                 throw new Exception("Buildings.csv: Build Resource is invalid!.");
             }
-
-            this.loadAmmoEffectD = DataTables.GetEffectByName(this.LoadAmmoEffect);
         }
 
         internal int GetBuildTime(int Level)
@@ -397,7 +393,7 @@
 
         internal ResourceData AltBuildResourceData(int Level)
         {
-            return DataTables.GetResourceByName(this.AltBuildResource[Level]);
+            return (ResourceData) CSV.Tables.Get(Gamefile.Resources).GetData(this.AltBuildResource[Level]);
         }
 
         internal int[] GetResourceMaxArray(int Level)

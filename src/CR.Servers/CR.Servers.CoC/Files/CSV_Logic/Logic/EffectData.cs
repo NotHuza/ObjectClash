@@ -69,7 +69,7 @@ namespace CR.Servers.CoC.Files.CSV_Logic.Logic
           get; protected set;
         }
 
-        protected string[] IsoLayer 
+        public string[] IsoLayer 
         {
           get; protected set;
         }

@@ -31,7 +31,6 @@
             CSV.Gamefiles.Add((int) Gamefile.Characters, @"Gamefiles/logic/characters.csv");
             CSV.Gamefiles.Add((int) Gamefile.Building_Classes, @"Gamefiles/logic/building_classes.csv");
             CSV.Gamefiles.Add((int) Gamefile.Obstacles, @"Gamefiles/logic/obstacles.csv");
-            CSV.Gamefiles.Add((int) Gamefile.Effects, @"Gamefiles/logic/effects.csv");
             CSV.Gamefiles.Add((int) Gamefile.Traps, @"Gamefiles/logic/traps.csv");
             CSV.Gamefiles.Add((int) Gamefile.Globals, @"Gamefiles/logic/globals.csv");
             CSV.Gamefiles.Add((int) Gamefile.Experience_Levels, @"Gamefiles/logic/experience_levels.csv");
@@ -72,6 +71,7 @@
             CSV.Village2StartUnit = (CharacterData) CSV.Tables.Get(Gamefile.Characters).GetData(((GlobalData) CSV.Tables.Get(Gamefile.Globals).GetData("VILLAGE2_START_UNIT")).TextValue);
 
             List<Data> Buildings = CSV.Tables.Get(Gamefile.Buildings).Datas;
+            List<Data> Characters = CSV.Tables.Get(Gamefile.Characters).Datas;
 
             for (int i = 0; i < Buildings.Count; i++)
             {
@@ -93,8 +93,12 @@
             }
             
             StringBuilder Help = new StringBuilder();
-            Help.AppendLine("Clashers Republic - AI Base Generator");
+            Help.AppendLine("ClashLand - AI Base Generator");
             Help.AppendLine("Available Building:");
+
+            StringBuilder Help2 = new StringBuilder();
+            Help.AppendLine("ClashLand - Donation");
+            Help.AppendLine("Available Character:");
 
             foreach (Data Building in Buildings)
             {
@@ -105,11 +109,38 @@
                 }
             }
 
+            foreach (Data Character in Characters)
+            {
+                if (Character is CharacterData CharacterData)
+                {
+                    if (CharacterData.VillageType == 0)
+                    {
+                        if (!CharacterData.IsSecondaryTroop)
+                        {
+                            if (!CharacterData.EnabledByCalendar)
+                            {
+                                if (!CharacterData.DisableProduction)
+                                {
+                                    Help2.AppendLine($" ID {CharacterData.InstanceId}\n Name: {CharacterData.Name}\n");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
-            Help.AppendLine("Command:\n/AIBase {Id-Here} {Attack-Mode-Here-If Available (Optional)}");
+
+            Help.AppendLine("Command:\n/CastleUnit {Id-Here}");
 
             Help.AppendLine("Example:");
-            Help.AppendLine(" /AIBase 1 (Will generate normal town hall)\n/AIBase 1 true (Will not generate anything due to Alt Mode is not avaiable)\n/AIBase 9      (Will generate normal archer tower)\n/AIBase 9 true (Will generate fast attack archer tower)");
+            Help.AppendLine(" /castleunit 1 (Will give you archer)\n");
+
+            Help.AppendLine("Command:\n/aibase {Id-Here} {Attack-Mode-Here-If Available (Optional)}");
+
+            Help.AppendLine("Example:");
+            Help.AppendLine(" /aibase 1 (Will generate normal town hall)\n/aibase 1 true (Will not generate anything due to Alt Mode is not avaiable)\n/aibase 9      (Will generate normal archer tower)\n/aibase 9 true (Will generate fast attack archer tower)");
+
+            Constants.DonationHelp = Help2;
             Constants.AIBaseHelp = Help;
 
             Console.WriteLine(CSV.Gamefiles.Count + " CSV Files loaded and stored in memory.");
