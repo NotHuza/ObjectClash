@@ -22,31 +22,28 @@ namespace CR.Servers.CoC
         private static void Main()
         {
             Configuration = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("Config.json").Build();
-            Console.Title = $"Huza Clash - {Assembly.GetExecutingAssembly().GetName().Name} - {DateTime.Now.Year} ©";
+            Console.Title = $"Object Clash - {Assembly.GetExecutingAssembly().GetName().Name} - {DateTime.Now.Year} ©";
 
             Console.SetOut(new Prefixed());
             Console.SetWindowSize(Width, Height);
 
             Servers.Core.Consoles.Colorful.Console.WriteWithGradient(@"
-                              ___ ___                        _________ .__                .__     
-                             /   |   \ __ _______________    \_   ___ \|  | _____    _____|  |__  
-                            /    ~    \  |  \___   /\__  \   /    \  \/|  | \__  \  /  ___/  |  \ 
-                            \    Y    /  |  //    /  / __ \_ \     \___|  |__/ __ \_\___ \|   Y  \
-                             \___|_  /|____//_____ \(____  /  \______  /____(____  /____  >___|  /
-                                   \/             \/     \/          \/          \/     \/     \/                                                                                                            Clash Edition
+                     █████╗ ██████╗      ██╗███████╗ █████╗ ████████╗ █████╗ ██╗      █████╗  ██████╗██╗  ██╗
+                    ██╔══██╗██╔══██╗     ██║██╔════╝██╔══██╗╚══██╔══╝██╔══██╗██║     ██╔══██╗██╔════╝██║  ██║
+                    ██║  ██║██████╦╝     ██║█████╗  ██║  ╚═╝   ██║   ██║  ╚═╝██║     ███████║╚█████╗ ███████║
+                    ██║  ██║██╔══██╗██╗  ██║██╔══╝  ██║  ██╗   ██║   ██║  ██╗██║     ██╔══██║ ╚═══██╗██╔══██║
+                    ╚█████╔╝██████╦╝╚█████╔╝███████╗╚█████╔╝   ██║   ╚█████╔╝███████╗██║  ██║██████╔╝██║  ██║
+                     ╚════╝ ╚═════╝  ╚════╝ ╚══════╝ ╚════╝    ╚═╝    ╚════╝ ╚══════╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝                                                                                                          Clash Edition
             ", Color.OrangeRed, Color.LimeGreen, 14);
 
-            Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine(@"Ultrapower Developer Team: Antz, Huza Modz, MeteHun, Alin");
-
-            Console.ResetColor();
+            Console.WriteLine(@"Object Developer Team: Antz, Huza Modz, Mr Vitalik");
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(Environment.NewLine);
-            Console.WriteLine(@"Huza Clash's programs are protected by our policies, available only to our partner.");
-            Console.WriteLine(@"Huza Clash Republic's programs are under the 'Proprietary' license.");
-            Console.WriteLine(@"Huza Clash is NOT affiliated to 'Supercell Oy'.");
-            Console.WriteLine(@"Huza Clash does NOT own 'Clash of Clans', 'Boom Beach', 'Clash Royale'.");
+            Console.WriteLine(@"Object Team's programs are protected by our policies, available only to our partner.");
+            Console.WriteLine(@"Object Team Republic's programs are under the 'Proprietary' license.");
+            Console.WriteLine(@"Object Team is NOT affiliated to 'Supercell Oy'.");
+            Console.WriteLine(@"Object Team does NOT own 'Clash of Clans', 'Boom Beach', 'Clash Royale'.");
             Console.WriteLine();
             Console.WriteLine(Assembly.GetExecutingAssembly().GetName().Name + " is now starting..." + Environment.NewLine);
 
