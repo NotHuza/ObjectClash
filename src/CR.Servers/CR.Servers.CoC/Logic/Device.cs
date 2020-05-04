@@ -35,7 +35,7 @@ namespace CR.Servers.CoC.Logic
 
         internal Token Token;
         internal bool UseRC4;
-
+        internal DateTime LastGlobalChatEntry;
         internal readonly KeepAliveServerMessage KeepAliveServerMessage;
 
         private readonly ConcurrentQueue<Message> _outgoingMessages;
