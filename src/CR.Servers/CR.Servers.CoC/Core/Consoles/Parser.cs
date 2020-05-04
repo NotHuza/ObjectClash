@@ -3,6 +3,7 @@
     using System;
     using System.Threading;
     using CR.Servers.CoC.Core.Events;
+    using CR.Servers.CoC.Extensions;
     using CR.Servers.CoC.Logic;
     using CR.Servers.Extensions;
 
@@ -37,6 +38,7 @@
                                     Console.WriteLine("# In-Memory Clans    # " + ConsolePad.Padding(Resources.Clans.Count.ToString(), 15) + "#");
                                     Console.WriteLine("# In-Memory Duels    # " + ConsolePad.Padding(Resources.Duels.DuelBattles.Count.ToString(), 15) + "#");
                                     Console.WriteLine("# In-Memory Duels-Q  # " + ConsolePad.Padding(Resources.Duels.WaitingDeviceQueue.Count.ToString(), 15) + "#");
+                                    Console.WriteLine("# Server Uptime      # " + ConsolePad.Padding(DateTime.UtcNow.Subtract(Resources.StartTime).ToReadableString(), 15) + "#");
                                     Console.WriteLine("# ----------------------------------- #");
 
                                     Console.WriteLine("# Incoming-Processors ->" + "#".PadLeft(39 - "# Incoming-Processors ->".Length));
