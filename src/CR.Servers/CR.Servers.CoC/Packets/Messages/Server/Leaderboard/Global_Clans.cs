@@ -16,10 +16,13 @@ namespace CR.Servers.CoC.Packets.Messages.Server.Leaderboard
     {
         internal List<Alliance> Alliances;
 
-        public Global_Clans(Device Device) : base(Device)
+        public Global_Clans(Device Device, Player player) : base(Device)
         {
 
         }
+
+        public string Message { get;  set; }
+        public string Name { get;  set; }
 
         internal override short Type
         {
