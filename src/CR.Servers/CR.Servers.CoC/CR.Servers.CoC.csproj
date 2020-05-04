@@ -59,10 +59,11 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>ucs.ico</ApplicationIcon>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>CR.Servers.CoC.Program</StartupObject>
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DnsClient, Version=1.0.7.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
@@ -200,6 +201,7 @@
     <Compile Include="Extensions\Helper\JsonHelper.cs" />
     <Compile Include="Extensions\Helper\ListHelper.cs" />
     <Compile Include="Extensions\Helper\ReaderHelper.cs" />
+    <Compile Include="Extensions\SpecialExtensions.cs" />
     <Compile Include="Extensions\TimeUtils.cs" />
     <Compile Include="Files\CSV.cs" />
     <Compile Include="Files\CSV_Helpers\Data.cs" />
@@ -211,7 +213,6 @@
     <Compile Include="Files\CSV_Logic\Logic\BuildingData.cs" />
     <Compile Include="Files\CSV_Logic\Logic\CharacterData.cs" />
     <Compile Include="Files\CSV_Logic\Logic\DecoData.cs" />
-    <Compile Include="Files\CSV_Logic\Logic\EffectData.cs" />
     <Compile Include="Files\CSV_Logic\Logic\ExperienceLevelData.cs" />
     <Compile Include="Files\CSV_Logic\Logic\GlobalData.cs" />
     <Compile Include="Files\CSV_Logic\Logic\HeroData.cs" />
@@ -238,6 +239,7 @@
     <Compile Include="Logic\Battles\DuelBattle.cs" />
     <Compile Include="Logic\Chat\Chat.cs" />
     <Compile Include="Logic\Chat\Chats.cs" />
+    <Compile Include="Logic\Chat\Global_Chat_Line.cs" />
     <Compile Include="Logic\Clan\Alliance.cs" />
     <Compile Include="Logic\Clan\Items\AllianceHeader.cs" />
     <Compile Include="Logic\Clan\Items\Member.cs" />
@@ -991,6 +993,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <Compile Include="Logic\Manager\WorkerManagerV2.cs" />
+    <Content Include="favicon.ico" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -998,6 +1001,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Tools\Patch.bat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1009,7 +1013,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="favicon.ico" />
     <Content Include="Tools\Clashers%27 Republic Hasher.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
