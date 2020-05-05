@@ -239,7 +239,6 @@
     <Compile Include="Logic\Battles\DuelBattle.cs" />
     <Compile Include="Logic\Chat\Chat.cs" />
     <Compile Include="Logic\Chat\Chats.cs" />
-    <Compile Include="Logic\Chat\Global_Chat_Line.cs" />
     <Compile Include="Logic\Clan\Alliance.cs" />
     <Compile Include="Logic\Clan\Items\AllianceHeader.cs" />
     <Compile Include="Logic\Clan\Items\Member.cs" />
