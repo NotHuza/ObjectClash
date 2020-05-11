@@ -12,6 +12,9 @@
     using CR.Servers.CoC.Packets.Messages.Server.Home;
     using Timer = System.Timers.Timer;
     using System.Threading.Tasks;
+    using CR.Servers.CoC.Extensions;
+    using Newtonsoft.Json;
+    using System.Runtime.CompilerServices;
 
     internal class Battle
     {
@@ -32,10 +35,13 @@
         internal List<Device> Viewers;
 
         internal Timer Timer;
+        internal int WinScore;
+        internal int LostScore;
 
         internal int AttackTime;
         internal int PreparationTime;
         internal int RemainingBattleTime;
+        internal int WinDuelScore;
 
         internal int RemainingBattleTimeSecs
         {
@@ -55,7 +61,6 @@
             this.Device = device;
             this.Attacker = attacker;
             this.Defender = defender;
-
             this.BattleLog = new BattleLog(this);
             this.Recorder = new BattleRecorder(this);
             this.Commands = new List<Command>(64);
@@ -63,8 +68,10 @@
 
             this.AttackTime = Globals.AttackLength;
             this.PreparationTime = duel ? Globals.AttackPrepartionLength2 : Globals.AttackPrepartionLength;
-
             this.RemainingBattleTime = 1000 * (this.AttackTime + this.PreparationTime) / 16;
+            this.WinScore = this.Attacker.Player.Score + Core.Resources.Random2.Next(10, 20);
+            this.WinDuelScore = this.Attacker.Player.DuelScore + Core.Resources.Random2.Next(10, 20);
+            this.LostScore = this.Attacker.Player.Score - Core.Resources.Random2.Next(10, 20);
 
             this.EndClientTurn();
         }
@@ -87,24 +94,27 @@
             }
 
             this.Timer.Dispose();
-
             Task savePlayer = null;
             Task saveHome = null;
+
+            //Score = Defender.Player;
+
             if (this.Started)
             {
                 this.Replay = await Resources.Battles.Save(this);
-
                 if (!this.Duel)
                 {
-                    this.Defender.Player.Inbox.Add(new BattleReportStreamEntry(this.Attacker.Player, this, (long)this.Replay.HighId << 32 | (uint)this.Replay.LowId, 2));
-                    this.Attacker.Player.Inbox.Add(new BattleReportStreamEntry(this.Defender.Player, this, (long)this.Replay.HighId << 32 | (uint)this.Replay.LowId, 7));
+                    this.Defender.Player.Inbox.Add(new BattleReportStreamEntry(this.Attacker.Player, this, ((long)this.Replay.HighId << 32) | (uint)this.Replay.LowId, 2));
+                    this.Attacker.Player.Inbox.Add(new BattleReportStreamEntry(this.Defender.Player, this, ((long)this.Replay.HighId << 32) | (uint)this.Replay.LowId, 7));
                 }
 
+
                 if (this.Commands.Count > 0)
-                {
-                    savePlayer = Resources.Accounts.SavePlayer(this.Defender.Player);
-                    saveHome = Resources.Accounts.SaveHome(this.Defender.Home);
+                {    
+                        savePlayer = Resources.Accounts.SavePlayer(this.Defender.Player);
+                        saveHome = Resources.Accounts.SaveHome(this.Defender.Home);
                 }
+
             }
 
             for (int i = 0; i < this.Viewers.Count; i++)
@@ -122,6 +132,33 @@
                 await Task.WhenAll(saveHome, savePlayer);
             this.Ended = true;
         }
+#if ClashLandlogic
+        /*internal static double WinTrophies()
+        {
+            Battle _Battle = null;
+            double Difference = (Player.Score - _Battle.Score) < 0
+       ? +(Player.Score - _Battle.Score)
+       : (Player.Score - _Battle.Score);
+            //double Difference = (AttackerTrophies - DefenderTrophies) < 0 ? +(DefenderTrophies - AttackerTrophies) : (AttackerTrophies - DefenderTrophies);
+            if (Difference >= 13 && Difference <= 34)
+            {
+                return Math.Round((-0.0794 * (Player.Score - _Battle.Score)) + 29.35838);
+            }
+            return Core.Resources.Random2.Next(10, 15);//clash land logic not work
+            
+        }*/
+
+        /*internal static double LoseTrophies()
+        {
+            Battle _Battle = null;
+            if (Player.Score >= 1000 && _Battle.Defender.Player.Score >= 1000)
+            {
+                return Math.Round((0.0531 * (Player.Score - _Battle.Defender.Player.Score)) + 19.60453);
+            }
+            return Core.Resources.Random2.Next(10, 15);//clash land logic not work
+
+        }*/
+#endif
 
         internal bool RemoveViewer(Device device)
         {
