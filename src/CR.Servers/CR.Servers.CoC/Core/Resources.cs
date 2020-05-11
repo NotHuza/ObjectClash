@@ -31,6 +31,7 @@ namespace CR.Servers.CoC.Core
         internal static Test Test;
         internal static Logger Logger;
         internal static Duels Duels;
+        internal static System.Random Random2;
         internal static Processor Processor;
         internal static DateTime StartTime;
 
@@ -66,6 +67,7 @@ namespace CR.Servers.CoC.Core
             Resources.Clans = new Clans();
             Resources.Chats = new Chats();
             Resources.Duels = new Duels();
+            Resources.Random2 = new System.Random(DateTime.UtcNow.ToString().GetHashCode());
             Resources.Random = new XorShift();
             Resources.Gateway = new Gateway();
             Resources.StartTime = DateTime.UtcNow;
@@ -75,8 +77,9 @@ namespace CR.Servers.CoC.Core
             Parser.Initialize();
             EventsHandler.Initialize();
 
-#if DEBUG
+
             Console.WriteLine("We loaded " + Factory.Messages.Count + " messages, " + Factory.Commands.Count + " commands, and " + Factory.Debugs.Count + " debug commands.\n");
+#if Debug
             Resources.Test = new Test();
 #endif
         }
