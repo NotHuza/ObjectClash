@@ -49,7 +49,7 @@
 
             Packet.AddCompressed(this.HomeJSON.ToString());
             Packet.AddCompressed(GameEvents.Events_Json);
-            Packet.AddCompressed("{\"Village2\":{\"TownHallMaxLevel\":8}}");
+            Packet.AddCompressed("{\"Village2\":{\"TownHallMaxLevel\":9}}");
         }
 
         internal void Load(JToken Json)
