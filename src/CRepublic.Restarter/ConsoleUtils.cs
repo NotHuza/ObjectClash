@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Reflection;
 
 namespace CRepublic.Restarter
@@ -7,14 +8,16 @@ namespace CRepublic.Restarter
     {
         public static void Welcome()
         {
+            CR.Servers.Core.Consoles.Colorful.Console.WriteWithGradient(@"
+                     █████╗ ██████╗      ██╗███████╗ █████╗ ████████╗ ██████╗  ████████╗ ██████╗████████╗████████╗   
+                    ██╔══██╗██╔══██╗     ██║██╔════╝██╔══██╗╚══██╔══╝██╔═══██╗ ██ ╔════╝██╔════╝██ ╔════╝╚══██╔══╝
+                    ██║  ██║██████╦╝     ██║█████╗  ██║  ╚═╝   ██║   ██║████╔╝ █████╗   ╚█████╗ █████╗      ██║ 
+                    ██║  ██║██╔══██╗██╗  ██║██╔══╝  ██║  ██╗   ██║   ██║   ██╗ ██╔══╝    ╚═══██╗██╔══╝      ██║
+                    ╚█████╔╝██████╦╝╚█████╔╝███████╗╚█████╔╝   ██║   ██║    ██║████████╗██████╔╝████████╗   ██║
+                     ╚════╝ ╚═════╝  ╚════╝ ╚══════╝ ╚════╝    ╚═╝   ╚═╝    ╚═╝ ╚══════╝╚═════╝  ╚══════╝   ╚═╝
+            ", Color.OrangeRed, Color.LimeGreen, 14);              
             Console.WriteLine();
-            WriteLineCenterYellow(@"_________ .__                .__                          __________                   ___.   .__  .__        ");
-            WriteLineCenterYellow(@"\_   ___ \|  | _____    _____|  |__   ___________  ______ \______   \ ____ ______  __ _\_ |__ |  | |__| ____  ");
-            WriteLineCenterYellow(@"/    \  \/|  | \__  \  /  ___/  |  \_/ __ \_  __ \/  ___/  |       _// __ \\____ \|  |  \ __ \|  | |  |/ ___\ ");
-            WriteLineCenterYellow(@"\     \___|  |__/ __ \_\___ \|   Y  \  ___/|  | \/\___ \   |    |   \  ___/|  |_> >  |  / \_\ \  |_|  \  \___ ");
-            WriteLineCenterYellow(@" \______  /____(____  /____  >___|  /\___  >__|  /____  >  |____|_  /\___  >   __/|____/|___  /____/__|\___  >");
-            WriteLineCenterYellow(@"        \/          \/     \/     \/     \/           \/          \/     \/|__|             \/             \/ ");
-            WriteLineCenterYellow(@"                                                                               RESTARTER V" + Assembly.GetExecutingAssembly().GetName().Version);
+            WriteLineCenterDarkYellow(" RESTARTER V" + Assembly.GetExecutingAssembly().GetName().Version);
 
 
             WriteLineCenterGreen("Server Restarter has been loaded successfully.\n");
