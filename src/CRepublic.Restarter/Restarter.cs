@@ -94,7 +94,7 @@ namespace CRepublic.Restarter
                 {
                     try
                     {
-                        var title = "Clashers' Republic Restarter v" + Assembly.GetExecutingAssembly().GetName().Version + " Count: " + RestartedTimes.Count;
+                        var title = "ObjectReset Restarter v" + Assembly.GetExecutingAssembly().GetName().Version + " Count: " + RestartedTimes.Count;
                         Console.Title = title;
 
                         // Check if hasCrashed.
