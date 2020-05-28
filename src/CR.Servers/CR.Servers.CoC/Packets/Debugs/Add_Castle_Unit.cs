@@ -20,7 +20,7 @@ namespace CR.Servers.CoC.Packets.Debugs
     {
         public Add_Castle_Unit(Device Device, params string[] Parameters) : base(Device, Parameters)
         {
-            // Add_Spells
+            // Add Castle Unit
         }
 
         internal override Rank RequiredRank
@@ -50,7 +50,7 @@ namespace CR.Servers.CoC.Packets.Debugs
                         int UnitLevel = level.Player.GetUnitUpgradeLevel(data);
                         this.Device.GameMode.CommandManager.AddCommand(new Alliance_Unit_Received(this.Device)
                         {
-                            Donator = "❤DebugCommand❤",
+                            Donator = "❤You❤",
                             UnitType = 0,
                             UnitId = data.GlobalId,
                             Level = UnitLevel
@@ -61,6 +61,13 @@ namespace CR.Servers.CoC.Packets.Debugs
                         CastleMax -= data.HousingSpace;
 
                     } while (CastleMax >= data.HousingSpace);
+
+                    if (this.Device.Connected)
+                    {
+                        new OwnHomeDataMessage(this.Device).Send();
+                    }
+
+                    this.SendChatMessage("Castle Troops Added");
                 }
             }
             else
@@ -70,7 +77,7 @@ namespace CR.Servers.CoC.Packets.Debugs
                     StreamEntry = new AllianceMailAvatarStreamEntry(this.Device.GameMode.Level.Player)
                     {
                         LowId = (int)DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds,
-                        SenderName = "[System] Command Manager",
+                        SenderName = "You",
                         SenderLeague = 22,
                         Message = Constants.DonationHelp.ToString()
                     }
