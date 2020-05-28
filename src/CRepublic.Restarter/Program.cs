@@ -28,7 +28,7 @@ namespace CRepublic.Restarter
             if (Console.WindowHeight != 35 || Console.WindowWidth != 130)
                 Console.SetWindowSize(130, 35);
 
-            Console.Title = "Clashers' Republic Restarter v" + Assembly.GetExecutingAssembly().GetName().Version +
+            Console.Title = "ObjectReset Restarter v" + Assembly.GetExecutingAssembly().GetName().Version +
                             " - Not Running";
             Console.Clear();
             ConsoleUtils.Welcome();
