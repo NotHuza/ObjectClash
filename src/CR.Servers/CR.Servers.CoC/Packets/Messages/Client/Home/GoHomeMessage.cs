@@ -44,10 +44,16 @@
                 {
                     if (this.Device.Account.Battle != null)
                     {
-                        //Player.Score = this.Device.Account.Battle.LostScore;
-                        Console.WriteLine(@"lost");
+                        // Player.Score = this.Device.Account.Battle.LostScore;
+                        await this.Device.Account.Battle.Trofeislogichlost();
                         await this.Device.Account.Battle.EndBattleAsync();
-                        Player.Score = this.Device.Account.Battle.WinScore;
+                        this.Device.Account.Battle = null;//npc
+                    }
+                    else
+                    {
+                        await this.Device.Account.Battle.Trofeislogichwin();
+                        await this.Device.Account.Battle.EndBattleAsync();
+                        //Player.Score = this.Device.Account.Battle.WinScore;
                         this.Device.Account.Battle = null;//npc
           
                         
@@ -58,8 +64,8 @@
                 {
                    
                     await this.Device.Account.DuelBattle.GetBattle(this.Device.GameMode.Level)?.EndBattleAsync();
+                   // Player.DuelScore = this.Device.Account.Battle.WinDuelScore;
                     this.Device.Account.DuelBattle.SendDuelBattleInfoMessage();
-                    Player.Score = this.Device.Account.Battle.WinDuelScore;
                     this.Device.Account.DuelBattle = null;//npc
                 }
 
