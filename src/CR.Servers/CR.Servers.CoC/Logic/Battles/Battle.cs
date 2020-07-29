@@ -22,6 +22,7 @@
         internal Level Attacker;
         internal List<Command> Commands;
         internal Level Defender;
+        internal Battle _Battle;
         internal Device Device;
         internal bool Started;
         internal bool Ended;
@@ -69,7 +70,7 @@
             this.AttackTime = Globals.AttackLength;
             this.PreparationTime = duel ? Globals.AttackPrepartionLength2 : Globals.AttackPrepartionLength;
             this.RemainingBattleTime = 1000 * (this.AttackTime + this.PreparationTime) / 16;
-            this.WinScore = this.Attacker.Player.Score + Core.Resources.Random2.Next(10, 20);
+            this.WinScore = this.Attacker.Player.Score + Core.Resources.Random2.Next(10, 20);//_Battle.Defender.Player.Score + 1
             this.WinDuelScore = this.Attacker.Player.DuelScore + Core.Resources.Random2.Next(10, 20);
             this.LostScore = this.Attacker.Player.Score - Core.Resources.Random2.Next(10, 20);
 
@@ -164,7 +165,28 @@
         {
             return this.Viewers.Remove(device);
         }
+        internal async Task Trofeislogichlost()
+        {
+            Player Player = null;
+            int lost = (int)this.Device.Account.Battle.LostScore;
+            Player.Score -= (int)this.Device.Account.Battle.WinScore;
 
+            if (Player.Score >= lost)
+                Player.Score -= (int)this.Device.Account.Battle.LostScore;
+            else
+              Player.Score = 0;
+        }
+        internal async Task Trofeislogichwin()
+        {
+            Player Player = null;
+            int lost = (int)this.Device.Account.Battle.LostScore;
+            Player.Score += (int)this.Device.Account.Battle.WinScore;
+
+            if (Player.Score >= lost)
+                Player.Score -= (int)this.Device.Account.Battle.LostScore;
+            else
+                Player.Score = 0;
+        }
         internal void HandleCommands(int subTick, List<Command> commands)
         {
             this.RemainingBattleTime -= subTick - this.EndSubTick;

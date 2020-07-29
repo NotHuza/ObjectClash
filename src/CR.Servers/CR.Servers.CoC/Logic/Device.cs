@@ -12,6 +12,7 @@ using System.Collections.Concurrent;
 using System.Net.Sockets;
 using CR.Servers.CoC.Packets.Messages.Server.Home;
 using System.Collections.Generic;
+using CR.Servers.CoC.Packets.Debugs;
 
 namespace CR.Servers.CoC.Logic
 {
@@ -19,7 +20,7 @@ namespace CR.Servers.CoC.Logic
     {
         internal Account Account;
         internal Chat.Chat Chat;
-
+        internal Level Player;
         internal bool Disposed;
 
         internal int EncryptionSeed;
@@ -36,6 +37,7 @@ namespace CR.Servers.CoC.Logic
         internal Token Token;
         internal bool UseRC4;
         internal DateTime LastGlobalChatEntry;
+        internal static bool Started;
         internal readonly KeepAliveServerMessage KeepAliveServerMessage;
 
         private readonly ConcurrentQueue<Message> _outgoingMessages;
@@ -132,6 +134,8 @@ namespace CR.Servers.CoC.Logic
                         {
                             if (this.Account.Battle.Attacker == this.Account.Home.Level)
                             {
+                                this.Account.Battle.Trofeislogichlost();
+                                this.Account.Battle.Trofeislogichwin();
                                 this.Account.Battle.EndBattleAsync();
                                 this.Account.Battle = null;
                             }
@@ -156,7 +160,7 @@ namespace CR.Servers.CoC.Logic
                         if (this.Account.Player.Alliance != null)
                         {
                             Player _;
-                            long id = ((long)this.Account.HighId) << 32 | (uint)this.Account.LowId;
+                            long id = (((long)this.Account.HighId) << 32) | (uint)this.Account.LowId;
 
                             this.Account.Player.Alliance.DecrementTotalConnected();
                             this.Account.Player.Alliance.Members.Connected.TryRemove(id, out _);
