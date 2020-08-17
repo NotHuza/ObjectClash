@@ -9,7 +9,7 @@ All programs developed by the ********' ******** Development Team are licensed b
 [![orginal-project](https://img.shields.io/badge/orginal-project-brightgreen.svg?style=flat)](https://github.com/ClashersRepublic/Cerberus-V3)
 
 ## Project Codenames:
-* CR.Servers.CoC - Clash of Clans Server
+* CR.Servers.CoC - Clash of Clans Server(www.soon.com)
 * CR.Hasher - Hash Generator
 * CR.LZMAManager - LZMA Manager
 * CR.LibraryPatcher - Library Patcher
