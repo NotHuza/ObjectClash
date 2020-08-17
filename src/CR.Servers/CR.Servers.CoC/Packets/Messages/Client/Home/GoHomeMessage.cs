@@ -45,16 +45,10 @@
                     if (this.Device.Account.Battle != null)
                     {
                         // Player.Score = this.Device.Account.Battle.LostScore;
-                        await this.Device.Account.Battle.Trofeislogichlost();
+                        //await this.Device.Account.Battle.Trofeislogichlost();
                         await this.Device.Account.Battle.EndBattleAsync();
                         this.Device.Account.Battle = null;//npc
-                    }
-                    else
-                    {
-                        await this.Device.Account.Battle.Trofeislogichwin();
-                        await this.Device.Account.Battle.EndBattleAsync();
-                        //Player.Score = this.Device.Account.Battle.WinScore;
-                        this.Device.Account.Battle = null;//npc
+                 
           
                         
                     }
