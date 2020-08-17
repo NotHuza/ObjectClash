@@ -5,7 +5,7 @@
 It has been **written by ***** & ***** from *******' *******. 
 The goal of this project is to ensure a clean, easy-to-die code environment.
 All programs developed by the ********' ******** Development Team are licensed by a license.
-
+.
 [![orginal-project](https://img.shields.io/badge/orginal-project-brightgreen.svg?style=flat)](https://github.com/ClashersRepublic/Cerberus-V3)
 
 ## Project Codenames:
