@@ -7,7 +7,10 @@
 
     internal class BuildingData : Data
     {
+        internal BuildingData gearUpBuildingData;
         internal BuildingClassData BuildingClassData;
+        internal BuildingClassData secondaryTargetingClassData;
+        internal BuildingClassData shopBuildingClassData;
         internal ResourceData BuildResourceData;
         internal ResourceData ProducesResourceData;
 
@@ -366,9 +369,13 @@
 
         internal override void Process()
         {
-            this.BuildingClassData = (BuildingClassData) CSV.Tables.Get(Gamefile.Building_Classes).GetData(this.BuildingClass);
-            this.BuildResourceData = (ResourceData) CSV.Tables.Get(Gamefile.Resources).GetData(this.BuildResource);
-            this.ProducesResourceData = (ResourceData) CSV.Tables.Get(Gamefile.Resources).GetData(this.ProducesResource);
+            this.gearUpBuildingData = DataTables.GetBuildingByName(this.GearUpBuilding);
+
+            this.BuildingClassData = DataTables.GetBuildingClassByName(this.BuildingClass);
+            this.secondaryTargetingClassData = DataTables.GetBuildingClassByName(this.SecondaryTargetingClass);
+            this.shopBuildingClassData = DataTables.GetBuildingClassByName(this.ShopBuildingClass);
+            this.BuildResourceData = DataTables.GetResourceByName(this.BuildResource);
+            this.ProducesResourceData = DataTables.GetResourceByName(this.ProducesResource);
 
             if (this.BuildingClassData == null)
             {
