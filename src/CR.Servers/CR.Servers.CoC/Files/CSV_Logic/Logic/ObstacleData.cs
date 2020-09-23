@@ -7,6 +7,11 @@
     internal class ObstacleData : Data
     {
         internal ResourceData ClearResourceData;
+        internal ResourceData lootResourceData;
+
+        internal EffectData clearEffectData;
+        internal EffectData pickUpEffectData;
+        internal ObstacleData spawnObstacleData;
 
         public ObstacleData(Row Row, DataTable DataTable) : base(Row, DataTable)
         {
@@ -58,7 +63,11 @@
 
         internal override void Process()
         {
-            this.ClearResourceData = (ResourceData) CSV.Tables.Get(Gamefile.Resources).GetData(this.ClearResource);
+            this.ClearResourceData = DataTables.GetResourceByName(this.ClearResource);
+            this.lootResourceData = DataTables.GetResourceByName(this.LootResource);
+            this.clearEffectData = DataTables.GetEffectByName(this.ClearEffect);
+            this.pickUpEffectData = DataTables.GetEffectByName(this.PickUpEffect);
+            this.spawnObstacleData = DataTables.GetObstacleByName(this.SpawnObstacle);
         }
     }
 }
