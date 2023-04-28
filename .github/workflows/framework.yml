@@ -1,0 +1,36 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+    env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.1
+
+    - name: Restore NuGet packages
+      run: nuget restore .\ObjectClash.sln
+
+    - name: Build
+      run: msbuild .\ObjectClash.sln /p:Configuration=Release /p:Platform="Any CPU" /p:TargetFrameworkVersion=v4.7.2 /t:Rebuild
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: built_artifacts
+        path: |
+          .\src\CR.Servers\CR.Servers.CoC\Builds\Release\*
+
